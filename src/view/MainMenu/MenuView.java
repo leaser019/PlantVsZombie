@@ -1,4 +1,4 @@
-package view;
+package view.MainMenu;
 
 import java.awt.*;
 import java.awt.EventQueue;
@@ -148,11 +148,15 @@ public class MenuView extends JFrame {
     }
 
     public void optionTab() {
-
+        ComingSoon frame = new ComingSoon();
+        dispose();
+        frame.setVisible(true);
     }
 
     public void helpTab() {
-
+        ComingSoon frame = new ComingSoon();
+        dispose();
+        frame.setVisible(true);
     }
 
     public void exitTab() {

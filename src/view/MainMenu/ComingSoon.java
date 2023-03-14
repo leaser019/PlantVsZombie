@@ -1,4 +1,4 @@
-package view;
+package view.MainMenu;
 
 import java.awt.EventQueue;
 
@@ -35,43 +35,42 @@ public class ComingSoon extends JFrame {
     }
 
     /**
-	 * Create the frame.
-	 */
-	public ComingSoon() {
+     * Create the frame.
+     */
+    public ComingSoon() {
         ComingSoonMouseListener comingSoonMouseListener = new ComingSoonMouseListener(this);
-		setResizable(false);
+        setResizable(false);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\dausht0-74037f3a-028d-4ed0-ac0a-c39ccc4e7a34.png"));
         setTitle("Plants Vs Zombie Clone");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(805,605);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(805, 605);
         setLocationRelativeTo(null);
-//		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        // setBounds(100, 100, 450, 300);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		setContentPane(contentPane);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("lib\\image\\comingSoon.png"));
+        setContentPane(contentPane);
+
+        JLabel lblNewLabel = new JLabel("New label");
+        lblNewLabel.setIcon(new ImageIcon("lib\\image\\comingSoon.png"));
         lblNewLabel.addMouseListener(comingSoonMouseListener);
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 797, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
-					.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
-					.addContainerGap())
-		);
-		contentPane.setLayout(gl_contentPane);
-	}
-    public void backToMenu(){
+        GroupLayout gl_contentPane = new GroupLayout(contentPane);
+        gl_contentPane.setHorizontalGroup(
+                gl_contentPane.createParallelGroup(Alignment.LEADING)
+                        .addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+                                .addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 797, Short.MAX_VALUE)
+                                .addContainerGap()));
+        gl_contentPane.setVerticalGroup(
+                gl_contentPane.createParallelGroup(Alignment.LEADING)
+                        .addGroup(Alignment.TRAILING, gl_contentPane.createSequentialGroup()
+                                .addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 659, Short.MAX_VALUE)
+                                .addContainerGap()));
+        contentPane.setLayout(gl_contentPane);
+    }
+
+    public void backToMenu() {
         this.dispose();
         try {
             MenuView frame = new MenuView();
