@@ -16,7 +16,7 @@ public class MenuController implements ActionListener {
         if(button.equals("Exit")){
             this.menuView.exitTab();
         }
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+        // throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
     
 }
