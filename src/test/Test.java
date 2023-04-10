@@ -1,10 +1,10 @@
 package test;
 
-import javafx.scene.control.Menu;
+import view.MainMenu.MenuView;
 
 public class Test {
     public static void main(String[] args) {
-        Menu m = new Menu();
+        MenuView m = new MenuView();
         
     }
 }

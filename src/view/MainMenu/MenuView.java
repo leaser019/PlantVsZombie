@@ -14,7 +14,7 @@ import controller.Menu.MenuMouseHelp;
 import controller.Menu.MenuMouseOption;
 import controller.Menu.MenuMouseStarAdventure;
 import view.Game.GamePanel;
-import view.Game.GameWindow;
+import view.Game.Game;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -34,7 +34,7 @@ public class MenuView extends JFrame {
     private JPanel contentPane;
     private JTextField textField_1;
     private ComingSoon comingSoon;
-    private GameWindow gameWindow;
+    private Game gameWindow;
     private GamePanel gamePanel;
 
     /**
@@ -142,7 +142,7 @@ public class MenuView extends JFrame {
     }
 
     public void startAdventure() {
-        new GameWindow(gamePanel);
+        new Game(gamePanel);
         dispose();
     }
 
