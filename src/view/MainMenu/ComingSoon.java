@@ -42,7 +42,7 @@ public class ComingSoon extends JFrame {
         setResizable(false);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
-                "lib\\image\\dausht0-74037f3a-028d-4ed0-ac0a-c39ccc4e7a34.png"));
+                "lib\\image\\icon.png"));
         setTitle("Plants Vs Zombie Clone");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(805, 605);
