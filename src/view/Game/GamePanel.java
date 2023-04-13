@@ -14,8 +14,7 @@ public class GamePanel extends JPanel {
     private Game game;
     private ArrayList<BufferedImage> listImg = new ArrayList<>();
     private Random random;
-    private long lastTime;
-    private int frame;
+    
 
     public GamePanel() {
         random = new Random();
@@ -28,9 +27,6 @@ public class GamePanel extends JPanel {
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        
-        fpsCounter();
-        repaint();
     }
 
     public Color getRanColor() {
@@ -40,13 +36,5 @@ public class GamePanel extends JPanel {
         return new Color(r, g, b);
     }
 
-    public void fpsCounter() {
-        this.frame++;
-        if (System.currentTimeMillis() - this.lastTime >= 1000) {
-            System.out.println("FPS: "+this.frame);
-            this.frame = 0;
-            this.lastTime = System.currentTimeMillis();
-        }
-
-    }
+    
 }
