@@ -3,7 +3,7 @@ package controller.ComingSoon;
 import java.awt.*;
 import java.awt.event.*;
 
-import view.MainMenu.ComingSoon;
+import view.Scenes.MainMenu.ComingSoon;
 
 public class ComingSoonMouseListener implements MouseListener {
     private ComingSoon comingSoon;

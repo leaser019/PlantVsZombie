@@ -1,4 +1,4 @@
-package view.MainMenu;
+package view.Scenes.MainMenu;
 
 import java.awt.*;
 import java.awt.EventQueue;
