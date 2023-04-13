@@ -34,7 +34,6 @@ public class Game extends JFrame implements Runnable {
         this.initInput();
     }
 
-    
     public void init() {
         gamePanel = new GamePanel();
         this.setSize(995, 750);
@@ -45,8 +44,8 @@ public class Game extends JFrame implements Runnable {
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\icon.png"));
-                setTitle("Plants Vs Zombie Clone");
-                this.setVisible(true);
+        setTitle("Plants Vs Zombie Clone");
+        this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -55,7 +54,7 @@ public class Game extends JFrame implements Runnable {
         };
         gameTheard.start();
     }
-    
+
     public void updateGame() {
     }
 
@@ -68,12 +67,12 @@ public class Game extends JFrame implements Runnable {
         double lastTimeUPS = System.nanoTime();
         int updateGame = 0;
         int frame = 0;
-        double now ;
-        
+        double now;
+
         while (true) {
-            
+
             now = System.nanoTime();
-           
+
             // Render
             if (now - lastTimeFPS >= timePerFrame) {
                 frame++;
@@ -81,7 +80,7 @@ public class Game extends JFrame implements Runnable {
                 repaint();
             }
             // Update
-             if (now - lastTimeUPS >= timePerUpdate) {
+            if (now - lastTimeUPS >= timePerUpdate) {
                 updateGame++;
                 updateGame();
                 lastTimeUPS = System.nanoTime();
@@ -95,13 +94,14 @@ public class Game extends JFrame implements Runnable {
             }
         }
     }
+
     private void initInput() {
         myMouseListener = new MyMouseListener();
         myKeyBoardListener = new MyKeyBoardListener();
         this.addMouseListener(myMouseListener);
         this.addMouseMotionListener(myMouseListener);
         this.addKeyListener(myKeyBoardListener);
-        
+
         requestFocus();
     }
 }
