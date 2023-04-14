@@ -44,7 +44,7 @@ public class Game extends JFrame implements Runnable {
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\icon.png"));
-        setTitle("Plants Vs Zombie Clone");
+        setTitle("Plants Vs Zombie");
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
