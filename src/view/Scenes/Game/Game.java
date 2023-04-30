@@ -1,4 +1,4 @@
-package view.Game;
+package view.Scenes.Game;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;

@@ -1,6 +1,6 @@
 package view.Scenes;
 
-import view.Game.Game;
+import view.Scenes.Game.Game;
 
 public class GameScene {
     private Game game;
