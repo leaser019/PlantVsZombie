@@ -1,15 +1,15 @@
 package model.Object;
 
-import java.awt.image.BufferedImage;
+import java.awt.Image;
 
 public class Tile {
-    private BufferedImage Obj;
+    private Image Obj;
 
-    public Tile(BufferedImage Obj){
+    public Tile(Image Obj){
         this.Obj = Obj;
     }
     
-    public BufferedImage getObj(){
+    public Image getObj(){
         return Obj;
     }
 

@@ -4,29 +4,36 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import java.awt.Color;
+import model.Managers.ZombieManager;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import java.util.Random;
+import java.awt.Image;
 
 public class GamePanel extends JPanel {
     private Game game;
-    private ArrayList<BufferedImage> listImg = new ArrayList<>();
-    private Random random;
-    
+    private ZombieManager zombieManager;  
+    private Image backGround;  
 
     public GamePanel() {
-        random = new Random();
-        JLabel lblNewLabel = new JLabel("Graph");
-        // lblNewLabel.setBounds(0, 0, 776, 531);
-        lblNewLabel.setIcon(new ImageIcon("lib\\image\\GameBackground.png"));
-        add(lblNewLabel);
+        
+        zombieManager = new ZombieManager(this); 
 
     }
 
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+    public void setBackGround(Graphics g){
+        backGround = new ImageIcon("lib\\image\\GameBackground.png").getImage();
+        g.drawImage(backGround, 0, 0, null);
+    }
+
+    public void render(Graphics g){
+        this.setBackGround(g);
+        zombieManager.draw(g);
+
     }
     
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        this.render(g);
+    }
+    
+
 }

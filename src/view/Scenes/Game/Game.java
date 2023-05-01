@@ -1,16 +1,14 @@
 package view.Scenes.Game;
 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import controller.Input.MyMouseListener;
+import model.Managers.ZombieManager;
 import controller.Input.MyKeyBoardListener;
 
 import java.awt.Toolkit;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.Buffer;
 import java.awt.BorderLayout;
 import java.awt.Font;
 
@@ -26,9 +24,11 @@ public class Game extends JFrame implements Runnable {
     private GamePanel gamePanel;
     private MyMouseListener myMouseListener;
     private MyKeyBoardListener myKeyBoardListener;
-    private BufferedImage img;
+    private ZombieManager zombieManager;
 
     public Game(GamePanel gamePanel) {
+        gamePanel = new GamePanel();
+        zombieManager = new ZombieManager(gamePanel);
         this.init();
         this.start();
         this.initInput();
@@ -56,9 +56,10 @@ public class Game extends JFrame implements Runnable {
     }
 
     public void updateGame() {
+        zombieManager.update();
+        repaint();
     }
 
-    @Override
     public void run() {
         double lastTimeCheck = System.currentTimeMillis();
         double timePerFrame = Math.pow(10, 9) / setFPS;
@@ -94,7 +95,7 @@ public class Game extends JFrame implements Runnable {
             }
         }
     }
-
+   
     private void initInput() {
         myMouseListener = new MyMouseListener();
         myKeyBoardListener = new MyKeyBoardListener();

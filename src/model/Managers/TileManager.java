@@ -1,5 +1,6 @@
 package model.Managers;
 
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -22,13 +23,13 @@ public class TileManager {
         tiles.add(ZOMBIE_01 = new Tile(getImage("lib\\image\\zombie1.png")));
         tiles.add(PEA_SHOOTER = new Tile(getImage("lib\\image\\peaShooter.png")));
     }
-    private BufferedImage getImage(String url){
-        atlas = (BufferedImage)Toolkit.getDefaultToolkit().getImage(url);
+    private Image getImage(String url){
+        atlas = (BufferedImage) Toolkit.getDefaultToolkit().getImage(url);
         int h = atlas.getHeight();
         int w = atlas.getWidth();
         return atlas.getSubimage(0, 0, w, h);
     }
-    public BufferedImage getImage(int id){
+    public Image getImage(int id){
         return tiles.get(id).getObj();
     }
 }
