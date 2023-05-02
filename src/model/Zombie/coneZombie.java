@@ -1,11 +1,11 @@
 package model.Zombie;
 
-import static model.HelperMethod.Constant.Zombies.ConeZombie;;
+import static model.HelperMethod.Constant.Zombies.coneZombie;
 
 public class coneZombie extends Zombie {
 
     public coneZombie(float x, float y, int iD) {
-        super(x, y, iD, ConeZombie);
+        super(x, y, iD, coneZombie);
     }
     
 }
