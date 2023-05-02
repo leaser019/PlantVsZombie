@@ -2,7 +2,7 @@ package model.Zombie;
 
 import java.awt.Rectangle;
 
-public class Zombie {
+public abstract class Zombie {
     private float x;
     private float y;
     private Rectangle bounds;
@@ -70,6 +70,6 @@ public class Zombie {
         this.x+=x;
         this.y+=y;
     }
-    
+
    
 }

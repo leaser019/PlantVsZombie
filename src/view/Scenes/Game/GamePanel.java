@@ -4,6 +4,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import controller.Input.MyKeyBoardListener;
+import controller.Input.MyMouseListener;
 import model.Managers.ZombieManager;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -12,9 +14,13 @@ public class GamePanel extends JPanel {
     private Game game;
     private ZombieManager zombieManager;  
     private Image backGround;  
+   
 
     public GamePanel() {
-        
+       this.init();
+    }
+
+    public void init(){
         zombieManager = new ZombieManager(this); 
 
     }
@@ -27,13 +33,17 @@ public class GamePanel extends JPanel {
     public void render(Graphics g){
         this.setBackGround(g);
         zombieManager.draw(g);
-
     }
     
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         this.render(g);
+
     }
     
+    public void updateGame(){
+        
+        zombieManager.update();
+    }
 
 }
