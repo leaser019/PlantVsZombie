@@ -24,10 +24,9 @@ public class Game extends JFrame implements Runnable {
     private GamePanel gamePanel;
     private MyMouseListener myMouseListener = new MyMouseListener();
     private MyKeyBoardListener myKeyBoardListener = new MyKeyBoardListener();
-    private ZombieManager zombieManager;
 
     public Game(GamePanel gamePanel) {
-        zombieManager = new ZombieManager(gamePanel);
+        // zombieManager = new ZombieManager(gamePanel);
         this.init();
         this.start();
         this.initInput();
@@ -39,7 +38,7 @@ public class Game extends JFrame implements Runnable {
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(gamePanel, BorderLayout.CENTER);
-        setResizable(false);
+        // setResizable(false);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\icon.png"));

@@ -45,4 +45,9 @@ public class Plant {
         this.plantType = plantType;
     }
 
+    public void move(float x, float y) {
+        this.x+=x;
+        this.y+=y;
+    }
+
 }

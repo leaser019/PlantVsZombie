@@ -11,6 +11,6 @@ public class Constant {
     public static class Plants {
         public static final int sunFlower = 0;
         public static final int peaShooter = 1;
-        public static final int freezePeaShooter = 2;
+        public static final int freezePea = 2;
     }
 }
