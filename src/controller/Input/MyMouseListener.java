@@ -17,9 +17,8 @@ public class MyMouseListener implements MouseListener, MouseMotionListener {
         if (e.getButton() == MouseEvent.BUTTON1) {
             System.out.println("Left is clicked");
             System.out.println(e.getX());
-            zombieManager.addZombie(200,200,2);
         } else if (e.getButton()== MouseEvent.BUTTON2){
-            System.out.println("Midlle is clicked");
+            System.out.println("Middle is clicked");
         } else if (e.getButton() == MouseEvent.BUTTON3){
             System.out.println("Right is clicked");
         }

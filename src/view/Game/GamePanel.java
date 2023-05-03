@@ -21,7 +21,7 @@ public class GamePanel extends JPanel {
 
     public GamePanel() {
         this.init();
-        this.initInput();
+        // this.initInput();
     }
 
     public void init() {

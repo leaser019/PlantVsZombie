@@ -29,7 +29,7 @@ public class Game extends JFrame implements Runnable {
         // zombieManager = new ZombieManager(gamePanel);
         this.init();
         this.start();
-        // this.initInput();
+        this.initInput();
     }
 
     public void init() {
