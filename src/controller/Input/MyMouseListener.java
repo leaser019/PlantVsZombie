@@ -6,27 +6,23 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import model.Managers.ZombieManager;
-import view.Scenes.Game.GamePanel;
+import view.Game.GamePanel;
 
 public class MyMouseListener implements MouseListener, MouseMotionListener {
     private ZombieManager zombieManager;
     private GamePanel gp;
-    public MyMouseListener(){
-        gp = new GamePanel();
-        zombieManager=new ZombieManager(gp);
-       
-    }
+   
     @Override
     public void mouseClicked(MouseEvent e) {
-        // if (e.getButton() == MouseEvent.BUTTON1) {
-        //     System.out.println("Left is clicked");
-        //     System.out.println(e.getX());
-        //     zombieManager.addZombie(200,200);
-        // } else if (e.getButton()== MouseEvent.BUTTON2){
-        //     System.out.println("Midlle is clicked");
-        // } else if (e.getButton() == MouseEvent.BUTTON3){
-        //     System.out.println("Right is clicked");
-        // }
+        if (e.getButton() == MouseEvent.BUTTON1) {
+            System.out.println("Left is clicked");
+            System.out.println(e.getX());
+            zombieManager.addZombie(200,200,2);
+        } else if (e.getButton()== MouseEvent.BUTTON2){
+            System.out.println("Midlle is clicked");
+        } else if (e.getButton() == MouseEvent.BUTTON3){
+            System.out.println("Right is clicked");
+        }
       
     }
 

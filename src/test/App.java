@@ -1,10 +1,9 @@
 package test;
 
-import view.Scenes.MainMenu.MenuView;
+import view.MainMenu.MenuView;
 
-public class Test {
+public class App {
     public static void main(String[] args) {
         MenuView m = new MenuView();
-        
     }
 }

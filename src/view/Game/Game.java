@@ -1,4 +1,4 @@
-package view.Scenes.Game;
+package view.Game;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -29,7 +29,7 @@ public class Game extends JFrame implements Runnable {
         // zombieManager = new ZombieManager(gamePanel);
         this.init();
         this.start();
-        this.initInput();
+        // this.initInput();
     }
 
     public void init() {
@@ -38,7 +38,7 @@ public class Game extends JFrame implements Runnable {
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(gamePanel, BorderLayout.CENTER);
-        // setResizable(false);
+        setResizable(false);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\icon.png"));
@@ -94,7 +94,7 @@ public class Game extends JFrame implements Runnable {
         }
     }
 
-    private void initInput() {
+    void initInput() {
         myMouseListener = new MyMouseListener();
         myKeyBoardListener = new MyKeyBoardListener();
         this.addMouseListener(myMouseListener);

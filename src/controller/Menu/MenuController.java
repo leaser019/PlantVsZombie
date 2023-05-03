@@ -3,7 +3,7 @@ package controller.Menu;
 import java.awt.*;
 import java.awt.event.*;
 
-import view.Scenes.MainMenu.MenuView;
+import view.MainMenu.MenuView;
 
 public class MenuController implements ActionListener {
     private MenuView menuView;

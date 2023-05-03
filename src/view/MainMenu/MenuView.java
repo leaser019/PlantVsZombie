@@ -1,4 +1,4 @@
-package view.Scenes.MainMenu;
+package view.MainMenu;
 
 import java.awt.*;
 import java.awt.EventQueue;
@@ -13,8 +13,8 @@ import controller.Menu.MenuMouseExitController;
 import controller.Menu.MenuMouseHelp;
 import controller.Menu.MenuMouseOption;
 import controller.Menu.MenuMouseStarAdventure;
-import view.Scenes.Game.Game;
-import view.Scenes.Game.GamePanel;
+import view.Game.Game;
+import view.Game.GamePanel;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;

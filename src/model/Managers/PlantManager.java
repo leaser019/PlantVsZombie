@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import model.HelperMethod.Constant.Plants;
 import model.Plant.Plant;
 import model.Plant.SunFlower;
+import view.Game.GamePanel;
 import model.Plant.PeaShooter;
 import model.Plant.FreezePea;
-import view.Scenes.Game.GamePanel;
+
 import static model.HelperMethod.Constant.Plants.*;
 
 public class PlantManager {
@@ -21,7 +22,7 @@ public class PlantManager {
     public PlantManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         plantImg = new Image[3];
-        this.addPlant(1100,200, freezePea);
+        this.addPlant(0,200, freezePea);
 
         this.loadPlantImg();
     }
@@ -61,7 +62,7 @@ public class PlantManager {
 
     public void update() {
         for (Plant plant : plants) {
-            plant.move(-0.2f, 0f);
+            // plant.move(-0.2f, 0f);
         }
     }
 }

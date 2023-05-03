@@ -3,7 +3,7 @@ package controller.Menu;
 import java.awt.*;
 import java.awt.event.*;
 
-import view.Scenes.MainMenu.MenuView;
+import view.MainMenu.MenuView;
 
 public class MenuMouseOption implements MouseListener {
     private MenuView menuView;

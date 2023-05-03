@@ -10,7 +10,7 @@ import model.Zombie.bossZombie;
 import model.Zombie.coneZombie;
 import model.Zombie.finalZombie;
 import model.Zombie.normalZombie;
-import view.Scenes.Game.GamePanel;
+import view.Game.GamePanel;
 
 import static model.HelperMethod.Constant.Zombies.*;
 
