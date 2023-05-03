@@ -6,7 +6,9 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 
 import model.Zombie.Zombie;
+import model.Zombie.bossZombie;
 import model.Zombie.coneZombie;
+import model.Zombie.finalZombie;
 import model.Zombie.normalZombie;
 import view.Scenes.Game.GamePanel;
 
@@ -20,13 +22,19 @@ public class ZombieManager {
     public ZombieManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         zombieImg = new Image[4];
-        this.addZombie(1000, 200, 0);
-        this.addZombie(1100, 400, 1);
+        // size 9*110,5*150
+        this.addZombie(1000, 100, normalZombie);
+        this.addZombie(1000, 2 * 100, coneZombie);
+        this.addZombie(1000, 3 * 100, coneZombie);
+        this.addZombie(1000, 4 * 100, bossZombie);
+        this.addZombie(1000, 5 * 100, finalZombie);
+
         this.loadZombieImg();
     }
 
     public void loadZombieImg() {
-        zombieImg[0] = Toolkit.getDefaultToolkit().getImage("lib\\image\\zombie1.png");
+        zombieImg[0] = Toolkit.getDefaultToolkit().getImage(
+                "lib\\image\\zombie1.png");
         zombieImg[1] = Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\zombie2.png");
         zombieImg[2] = Toolkit.getDefaultToolkit().getImage(
@@ -54,6 +62,12 @@ public class ZombieManager {
                 break;
             case coneZombie:
                 zombies.add(new coneZombie(x, y, 0));
+                break;
+            case bossZombie:
+                zombies.add(new bossZombie(x, y, 0));
+                break;
+            case finalZombie:
+                zombies.add(new finalZombie(x, y, 0));
                 break;
         }
     }
