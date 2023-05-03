@@ -14,6 +14,7 @@ import view.Scenes.Game.GamePanel;
 
 import static model.HelperMethod.Constant.Zombies.*;
 
+
 public class ZombieManager {
     private GamePanel gamePanel;
     private Image[] zombieImg;
@@ -74,7 +75,7 @@ public class ZombieManager {
 
     public void update() {
         for (Zombie zombie : zombies) {
-            zombie.move(-0.2f, 0f);
+            zombie.move(getSpeed(zombie.getZombieType()), 0f);
         }
     }
 }
