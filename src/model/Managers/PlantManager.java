@@ -3,6 +3,7 @@ package model.Managers;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.color.ICC_ColorSpace;
 import java.util.ArrayList;
 
 import model.HelperMethod.Constant.Plants;
@@ -18,13 +19,23 @@ public class PlantManager {
     private GamePanel gamePanel;
     private Image[] plantImg;
     private ArrayList<Plant> plants = new ArrayList<>();
+    private Image[] plantCardImg;
 
     public PlantManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
-        plantImg = new Image[3];
-        this.addPlant(0,200, freezePea);
+        this.initPlant();
+        this.addPlant(0, 200, freezePea);
+        this.loadImg();
+    }
 
+    private void initPlant() {
+        plantImg = new Image[3];
+        plantCardImg = new Image[3];
+    }
+
+    private void loadImg() {
         this.loadPlantImg();
+        this.loadPlantCardImg();
     }
 
     private void loadPlantImg() {
@@ -34,6 +45,15 @@ public class PlantManager {
                 "lib\\image\\peaShooter.gif");
         plantImg[2] = Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\freezePeaShooter.gif");
+    }
+
+    private void loadPlantCardImg() {
+        plantCardImg[0] = Toolkit.getDefaultToolkit().getImage(
+                "lib\\image\\cardSunFlower.png");
+        plantCardImg[1] = Toolkit.getDefaultToolkit().getImage(
+                "lib\\image\\cardPeaShooter.png");
+        plantCardImg[2] = Toolkit.getDefaultToolkit().getImage(
+                "lib\\image\\cardFreezePea.png");
     }
 
     public void draw(Graphics g) {
@@ -62,7 +82,10 @@ public class PlantManager {
 
     public void update() {
         for (Plant plant : plants) {
-            // plant.move(-0.2f, 0f);
+            // empty
         }
+    }
+    public Image[] getPlantCardImg(){
+        return plantCardImg;
     }
 }

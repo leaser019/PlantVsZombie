@@ -1,11 +1,7 @@
 package view.Game;
 
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-
 import controller.Input.MyMouseListener;
-import model.Managers.ZombieManager;
 import controller.Input.MyKeyBoardListener;
 
 import java.awt.Toolkit;

@@ -1,13 +1,14 @@
 package view.Game;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controller.Input.MyKeyBoardListener;
 import controller.Input.MyMouseListener;
 import model.Managers.PlantManager;
 import model.Managers.ZombieManager;
+import view.UI.CardBar;
+
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -18,14 +19,14 @@ public class GamePanel extends JPanel {
     private Image backGround;
     private MyKeyBoardListener keyBoardListener;
     private MyMouseListener mouseListener;
+    private CardBar cardBar;
 
     public GamePanel() {
         this.init();
-        // this.initInput();
     }
 
     public void init() {
-        // game = new Game(this);
+        cardBar = new CardBar(116, 15, 450, 80,this);
         zombieManager = new ZombieManager(this);
         plantManager = new PlantManager(this);
 
@@ -38,8 +39,10 @@ public class GamePanel extends JPanel {
 
     public void render(Graphics g) {
         this.setBackGround(g);
+        cardBar.draw(g);
         zombieManager.draw(g);
         plantManager.draw(g);
+
     }
 
     public void paintComponent(Graphics g) {
@@ -59,5 +62,8 @@ public class GamePanel extends JPanel {
         this.addKeyListener(keyBoardListener);
         this.addMouseListener(mouseListener);
         this.addMouseMotionListener(mouseListener);
+    }
+    public PlantManager getPlantManager(){
+        return this.plantManager;
     }
 }

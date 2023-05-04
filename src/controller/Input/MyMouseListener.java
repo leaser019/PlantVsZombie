@@ -20,7 +20,7 @@ public class MyMouseListener implements MouseListener, MouseMotionListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
-            System.out.println("Left is clicked");
+            System.out.println(e.getX());
             System.out.println(e.getY());
         } else if (e.getButton() == MouseEvent.BUTTON2) {
             System.out.println("Middle is clicked");

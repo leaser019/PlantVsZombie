@@ -7,7 +7,10 @@ import java.awt.Rectangle;
 import model.HelperMethod.INeededMethod;
 
 public class MyButton implements INeededMethod {
-    private int x, y, width, height;
+    int x;
+    int y;
+    private int width;
+    private int height;
     private String text;
     private Rectangle bounds;
 
@@ -25,14 +28,19 @@ public class MyButton implements INeededMethod {
     }
 
     public void draw(Graphics g) {
-        // Body
+        drawBody(g);
+        drawBorder(g);
+        drawText(g);
+    }
+
+    public void drawBody(Graphics g) {
         g.setColor(Color.WHITE);
         g.fillRect(x, y, width, height);
-        // Border
+    }
+
+    public void drawBorder(Graphics g) {
         g.setColor(Color.BLACK);
         g.drawRect(x, y, width, height);
-        // Text
-        drawText(g);
     }
 
     public void drawText(Graphics g) {
@@ -47,6 +55,14 @@ public class MyButton implements INeededMethod {
 
     @Override
     public void mouseClicked(int x, int y) {
-       
+
+    }
+
+    @Override
+    public void mouseOver(int x, int y) {
+    }
+
+    @Override
+    public void mousePressed(int x, int y) {
     }
 }
