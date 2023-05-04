@@ -25,6 +25,7 @@ public class GamePanel extends JPanel {
     }
 
     public void init() {
+        // game = new Game(this);
         zombieManager = new ZombieManager(this);
         plantManager = new PlantManager(this);
 
@@ -53,8 +54,8 @@ public class GamePanel extends JPanel {
     }
 
     public void initInput() {
-        keyBoardListener = new MyKeyBoardListener();
-        mouseListener = new MyMouseListener();
+        keyBoardListener = new MyKeyBoardListener(game);
+        mouseListener = new MyMouseListener(game);
         this.addKeyListener(keyBoardListener);
         this.addMouseListener(mouseListener);
         this.addMouseMotionListener(mouseListener);

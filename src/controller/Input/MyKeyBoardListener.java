@@ -3,7 +3,13 @@ package controller.Input;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import view.Game.Game;
+
 public class MyKeyBoardListener implements KeyListener {
+    private Game game;
+    public MyKeyBoardListener(Game game){
+        this.game = game;
+    }
 
     @Override
     public void keyTyped(KeyEvent e) {

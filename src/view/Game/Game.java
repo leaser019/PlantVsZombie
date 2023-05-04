@@ -22,11 +22,10 @@ public class Game extends JFrame implements Runnable {
     }
 
     private GamePanel gamePanel;
-    private MyMouseListener myMouseListener = new MyMouseListener();
-    private MyKeyBoardListener myKeyBoardListener = new MyKeyBoardListener();
+    private MyMouseListener myMouseListener;
+    private MyKeyBoardListener myKeyBoardListener;
 
     public Game(GamePanel gamePanel) {
-        // zombieManager = new ZombieManager(gamePanel);
         this.init();
         this.start();
         this.initInput();
@@ -95,8 +94,8 @@ public class Game extends JFrame implements Runnable {
     }
 
     void initInput() {
-        myMouseListener = new MyMouseListener();
-        myKeyBoardListener = new MyKeyBoardListener();
+        myMouseListener = new MyMouseListener(this);
+        myKeyBoardListener = new MyKeyBoardListener(this);
         this.addMouseListener(myMouseListener);
         this.addMouseMotionListener(myMouseListener);
         this.addKeyListener(myKeyBoardListener);
