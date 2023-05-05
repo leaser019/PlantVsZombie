@@ -1,8 +1,9 @@
 package view.Game;
 
 import javax.swing.JFrame;
-import controller.Input.MyMouseListener;
-import controller.Input.MyKeyBoardListener;
+
+import controller.InputForGame.MyKeyBoardListener;
+import controller.InputForGame.MyMouseListener;
 
 import java.awt.Toolkit;
 import java.awt.BorderLayout;
@@ -97,5 +98,9 @@ public class Game extends JFrame implements Runnable {
         this.addKeyListener(myKeyBoardListener);
 
         requestFocus();
+    }
+
+    public GamePanel getGamePanel(){
+        return gamePanel;
     }
 }

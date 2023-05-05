@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controller.ComingSoon.ComingSoonMouseListener;
+import controller.MainMenu.ComingSoon.ComingSoonMouseListener;
 
 import javax.swing.JLabel;
 import javax.swing.GroupLayout;

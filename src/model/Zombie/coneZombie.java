@@ -1,6 +1,6 @@
 package model.Zombie;
 
-import static model.HelperMethod.Constant.Zombies.coneZombie;
+import static model.Helper.Constant.Zombies.coneZombie;
 
 public class coneZombie extends Zombie {
 

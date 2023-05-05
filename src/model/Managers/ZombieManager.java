@@ -1,5 +1,7 @@
 package model.Managers;
 
+import static model.Helper.Constant.Zombies.*;
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -11,8 +13,6 @@ import model.Zombie.coneZombie;
 import model.Zombie.finalZombie;
 import model.Zombie.normalZombie;
 import view.Game.GamePanel;
-
-import static model.HelperMethod.Constant.Zombies.*;
 
 
 public class ZombieManager {

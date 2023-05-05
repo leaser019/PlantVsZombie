@@ -4,9 +4,9 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import model.HelperMethod.INeededMethod;
+import model.Helper.IMouse;
 
-public class MyButton implements INeededMethod {
+public class MyButton implements IMouse {
     int x;
     int y;
     private int width;
@@ -64,5 +64,35 @@ public class MyButton implements INeededMethod {
 
     @Override
     public void mousePressed(int x, int y) {
+    }
+
+    @Override
+    public void mouseReleased(int x, int y) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mouseReleased'");
+    }
+
+    @Override
+    public void mouseEntered(int x, int y) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mouseEntered'");
+    }
+
+    @Override
+    public void mouseExited(int x, int y) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mouseExited'");
+    }
+
+    @Override
+    public void mouseDragged(int x, int y) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mouseDragged'");
+    }
+
+    @Override
+    public void mouseMoved(int x, int y) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mouseMoved'");
     }
 }

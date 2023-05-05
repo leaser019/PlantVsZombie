@@ -7,12 +7,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controller.Menu.MenuController;
-import controller.Menu.MenuMouseComingSoon;
-import controller.Menu.MenuMouseExitController;
-import controller.Menu.MenuMouseHelp;
-import controller.Menu.MenuMouseOption;
-import controller.Menu.MenuMouseStarAdventure;
+import controller.MainMenu.Menu.MenuController;
+import controller.MainMenu.Menu.MenuMouseComingSoon;
+import controller.MainMenu.Menu.MenuMouseExitController;
+import controller.MainMenu.Menu.MenuMouseHelp;
+import controller.MainMenu.Menu.MenuMouseOption;
+import controller.MainMenu.Menu.MenuMouseStarAdventure;
 import view.Game.Game;
 import view.Game.GamePanel;
 

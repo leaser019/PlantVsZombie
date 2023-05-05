@@ -1,5 +1,5 @@
 package model.Zombie;
-import static model.HelperMethod.Constant.Zombies.bossZombie;
+import static model.Helper.Constant.Zombies.bossZombie;
 public class bossZombie extends Zombie {
 
     public bossZombie(float x, float y, int iD) {

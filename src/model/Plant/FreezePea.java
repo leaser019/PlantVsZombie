@@ -1,5 +1,5 @@
 package model.Plant;
-import static model.HelperMethod.Constant.Plants.freezePea;
+import static model.Helper.Constant.Plants.freezePea;
 public class FreezePea extends Plant {
 
     public FreezePea(int x, int y, int id) {
