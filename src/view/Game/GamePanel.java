@@ -102,7 +102,7 @@ public class GamePanel extends JPanel implements IMouse {
 
     public void mouseClicked(int x, int y) {
         System.out.println("left");
-        if (y < 95) {
+        if (y <195) {
             cardBar.mouseClicked(x, y);
         }
         if (selectedPlant != null) {

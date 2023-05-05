@@ -49,11 +49,12 @@ public class CardBar implements IMouse {
             g.drawImage(gamePanel.getPlantManager().getPlantCardImg()[i], plantButtons[i].x, plantButtons[i].y, null);
         }
     }
+
     @Override
-    public void         mouseClicked(int x, int y) {
-        for(int i=0;i<plantButtons.length;i++){
-            if(plantButtons[i].getBound().contains(x, y)){
-                selectedPlant = new Plant(0, 0, -1,i);
+    public void mouseClicked(int x, int y) {
+        for (int i = 0; i < plantButtons.length; i++) {
+            if (plantButtons[i].getBound().contains(x, y)) {
+                selectedPlant = new Plant(0, 0, -1, i);
                 gamePanel.setSelectedPlant(selectedPlant);
                 return;
             }
@@ -116,7 +117,6 @@ public class CardBar implements IMouse {
         this.gamePanel = gamePanel;
     }
 
-
     @Override
     public void mousePressed(int x, int y) {
     }
@@ -143,6 +143,6 @@ public class CardBar implements IMouse {
 
     @Override
     public void mouseMoved(int x, int y) {
-        }
+    }
 
 }
