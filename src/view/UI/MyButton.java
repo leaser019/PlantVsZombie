@@ -6,13 +6,15 @@ import java.awt.Rectangle;
 
 import model.Helper.IMouse;
 
-public class MyButton implements IMouse {
+public class MyButton {
     int x;
     int y;
     private int width;
     private int height;
     private String text;
     private Rectangle bounds;
+    private boolean mouseOver;
+    private boolean mousePress;
 
     public MyButton(String text, int x, int y, int width, int height) {
         this.x = x;
@@ -53,46 +55,25 @@ public class MyButton implements IMouse {
         return bounds;
     }
 
-    @Override
-    public void mouseClicked(int x, int y) {
-
+    public void resetBoolean() {
+        this.mouseOver = false;
+        this.mousePress = false;
     }
 
-    @Override
-    public void mouseOver(int x, int y) {
+    public boolean isMouseOver() {
+        return mouseOver;
     }
 
-    @Override
-    public void mousePressed(int x, int y) {
+    public void setMouseOver(boolean mouseOver) {
+        this.mouseOver = mouseOver;
     }
 
-    @Override
-    public void mouseReleased(int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseReleased'");
+    public boolean isMousePress() {
+        return mousePress;
     }
 
-    @Override
-    public void mouseEntered(int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseEntered'");
+    public void setMousePress(boolean mousePress) {
+        this.mousePress = mousePress;
     }
 
-    @Override
-    public void mouseExited(int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseExited'");
-    }
-
-    @Override
-    public void mouseDragged(int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseDragged'");
-    }
-
-    @Override
-    public void mouseMoved(int x, int y) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mouseMoved'");
-    }
 }

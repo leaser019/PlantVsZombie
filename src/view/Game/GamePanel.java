@@ -102,16 +102,20 @@ public class GamePanel extends JPanel implements IMouse {
 
     public void mouseClicked(int x, int y) {
         System.out.println("left");
-        if (y <195) {
+        if (y <= 250) {
             cardBar.mouseClicked(x, y);
-        }
-        if (selectedPlant != null) {
-            plantManager.addPlant(selectedPlant, mouseX, mouseY);
-            selectedPlant = null;
+        } else {
+            if (selectedPlant != null) {
+                plantManager.addPlant(selectedPlant, mouseX, mouseY);
+                selectedPlant = null;
+            }
         }
     }
 
     public void mousePressed(int x, int y) {
+        if (y <= 250) {
+            cardBar.mousePressed(x, y);
+        }
     }
 
     public void mouseReleased(int x, int y) {
@@ -121,8 +125,12 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void mouseMoved(int x, int y) {
-        mouseX = (x / 32) * 32;
-        mouseY = (y / 32) * 32;
+        if (y <= 250) {
+            cardBar.mouseMoved(x, y);
+        } else {
+            mouseX = (x / 32) * 32;
+            mouseY = (y / 32) * 32;
+        }
     }
 
     public void mouseEntered(int x, int y) {

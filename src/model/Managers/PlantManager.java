@@ -63,7 +63,10 @@ public class PlantManager {
     }
 
     private void drawPlant(Plant plant, Graphics g) {
-        g.drawImage(plantImg[plant.getPlantType()], (int) plant.getX(), (int) plant.getY(), null);
+        // g.drawImage(plantImg[plant.getPlantType()], (int) plant.getX(), (int) plant.getY(), null);
+        for (Plant p : plants) {
+            g.drawImage(plantImg[p.getPlantType()], p.getX(), p.getY(),null);
+        }
     }
 
     private void addPlant(int x, int y, int plantType) {

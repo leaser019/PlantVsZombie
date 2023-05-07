@@ -14,6 +14,8 @@ public class CardBar implements IMouse {
     private PlantManager plantManager;
     private GamePanel gamePanel;
     private Plant selectedPlant;
+    int w = 65;
+    int h = 70;
 
     public CardBar(int x, int y, int width, int height, GamePanel gamePanel) {
         this.x = x;
@@ -26,8 +28,6 @@ public class CardBar implements IMouse {
 
     public void initButtons() {
         plantButtons = new MyButton[3];
-        int w = 65;
-        int h = 70;
         int x = 110;
         int y = 13;
         int addOn = 10;
@@ -39,26 +39,19 @@ public class CardBar implements IMouse {
     }
 
     public void draw(Graphics g) {
-        // g.setColor(Color.WHITE);
-        // g.fillRect(x, y, width, height);
         drawButton(g);
+
     }
 
     public void drawButton(Graphics g) {
         for (int i = 0; i < plantButtons.length; i++) {
             g.drawImage(gamePanel.getPlantManager().getPlantCardImg()[i], plantButtons[i].x, plantButtons[i].y, null);
-        }
-    }
-
-    @Override
-    public void mouseClicked(int x, int y) {
-        for (int i = 0; i < plantButtons.length; i++) {
-            if (plantButtons[i].getBound().contains(x, y)) {
-                selectedPlant = new Plant(0, 0, -1, i);
-                gamePanel.setSelectedPlant(selectedPlant);
-                return;
+            if (plantButtons[i].isMouseOver()) {
+                g.setColor(Color.RED);
+                g.drawRect(plantButtons[i].x, plantButtons[i].y, w, h);
             }
         }
+
     }
 
     public int getX() {
@@ -118,11 +111,25 @@ public class CardBar implements IMouse {
     }
 
     @Override
+    public void mouseClicked(int x, int y) {
+        for (int i = 0; i < plantButtons.length; i++) {
+            if (plantButtons[i].getBound().contains(x, y)) {
+                selectedPlant = new Plant(0, 0, -1, i);
+                gamePanel.setSelectedPlant(selectedPlant);
+                return;
+            }
+        }
+    }
+
+    @Override
     public void mousePressed(int x, int y) {
+     
+     
     }
 
     @Override
     public void mouseOver(int x, int y) {
+        
     }
 
     @Override
@@ -131,18 +138,28 @@ public class CardBar implements IMouse {
 
     @Override
     public void mouseEntered(int x, int y) {
+
     }
 
     @Override
     public void mouseExited(int x, int y) {
+
     }
 
     @Override
     public void mouseDragged(int x, int y) {
+
     }
 
     @Override
     public void mouseMoved(int x, int y) {
+        for (int i = 0; i < plantButtons.length; i++) {
+            if (plantButtons[i].getBound().contains(x, y)) {
+                plantButtons[i].setMouseOver(true);
+            } else {
+                plantButtons[i].setMouseOver(false);
+            }
+        }
     }
 
 }
