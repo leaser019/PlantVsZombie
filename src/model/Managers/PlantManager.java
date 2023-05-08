@@ -20,7 +20,7 @@ public class PlantManager {
     private Image[] plantImg;
     private ArrayList<Plant> plants = new ArrayList<>();
     private Image[] plantCardImg;
-    private int plantAmount=0;
+    private int plantAmount = 0;
 
     public PlantManager(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
@@ -63,11 +63,14 @@ public class PlantManager {
     }
 
     private void drawPlant(Plant plant, Graphics g) {
-        // g.drawImage(plantImg[plant.getPlantType()], (int) plant.getX(), (int) plant.getY(), null);
+        // g.drawImage(plantImg[plant.getPlantType()], (int) plant.getX(), (int)
+        // plant.getY(), null);
         for (Plant p : plants) {
-            g.drawImage(plantImg[p.getPlantType()], p.getX(), p.getY(),null);
+            g.drawImage(plantImg[p.getPlantType()], p.getX(), p.getY(), null);
         }
     }
+    
+
 
     private void addPlant(int x, int y, int plantType) {
         switch (plantType) {
@@ -83,7 +86,7 @@ public class PlantManager {
         }
     }
 
-    public void addPlant(Plant selectedPlant, int x,int y){
+    public void addPlant(Plant selectedPlant, int x, int y) {
         plants.add(new Plant(x, y, plantAmount++, selectedPlant.getPlantType()));
         System.out.println("Add Plant !");
     }
@@ -93,7 +96,23 @@ public class PlantManager {
             // empty
         }
     }
-    public Image[] getPlantCardImg(){
+
+    public Image[] getPlantCardImg() {
         return plantCardImg;
     }
+
+    public Image[] getPlantImg() {
+        return plantImg;
+    }
+
+    public Plant checkPlantAt(int x, int y) {
+        for (Plant p : plants) {
+            if (p.getX() == x && p.getY() == y) {
+                return p;
+            }   
+        }
+        return null;
+    }
+
+   
 }

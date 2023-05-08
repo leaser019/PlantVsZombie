@@ -11,6 +11,7 @@ import model.Managers.ZombieManager;
 import model.Plant.Plant;
 import view.UI.CardBar;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -48,11 +49,19 @@ public class GamePanel extends JPanel implements IMouse {
         zombieManager.draw(g);
         plantManager.draw(g);
         drawSelectedPlant(g);
+        drawHightLight(g);
+    }
+
+    private void drawHightLight(Graphics g){
+        if(selectedPlant!=null){
+            g.setColor(Color.RED);
+            g.drawRect(mouseX, mouseY, 111, 120);
+        }
     }
 
     private void drawSelectedPlant(Graphics g) {
         if (selectedPlant != null) {
-            g.drawImage(plantManager.getPlantCardImg()[selectedPlant.getPlantType()], mouseX, mouseY, null);
+            g.drawImage(plantManager.getPlantImg()[selectedPlant.getPlantType()], mouseX, mouseY, null);
             System.out.println("DONE");
         }
     }
@@ -106,10 +115,24 @@ public class GamePanel extends JPanel implements IMouse {
             cardBar.mouseClicked(x, y);
         } else {
             if (selectedPlant != null) {
-                plantManager.addPlant(selectedPlant, mouseX, mouseY);
-                selectedPlant = null;
+                if (checkPlant(mouseX, mouseY) == null) {
+                    plantManager.addPlant(selectedPlant, mouseX, mouseY);
+                    selectedPlant = null;
+                }
+            }
+            else{
+                Plant p =checkPlant(mouseX, mouseY);
+                if(p==null){
+                    return;
+                }else{
+                    cardBar.displayPlant(p);
+                }
             }
         }
+    }
+
+    private Plant checkPlant(int x, int y) {
+        return this.plantManager.checkPlantAt(x,y);
     }
 
     public void mousePressed(int x, int y) {
@@ -128,8 +151,8 @@ public class GamePanel extends JPanel implements IMouse {
         if (y <= 250) {
             cardBar.mouseMoved(x, y);
         } else {
-            mouseX = (x / 32) * 32;
-            mouseY = (y / 32) * 32;
+            mouseX = x ;
+            mouseY = y ;
         }
     }
 

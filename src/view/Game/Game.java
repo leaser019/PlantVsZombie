@@ -30,7 +30,7 @@ public class Game extends JFrame implements Runnable {
 
     public void init() {
         gamePanel = new GamePanel();
-        this.setSize(995, 750);
+        this.setSize(999, 750);//995=111*9,750=150*5
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(gamePanel, BorderLayout.CENTER);

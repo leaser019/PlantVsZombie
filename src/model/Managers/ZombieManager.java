@@ -2,6 +2,7 @@ package model.Managers;
 
 import static model.Helper.Constant.Zombies.*;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -47,7 +48,14 @@ public class ZombieManager {
     public void draw(Graphics g) {
         for (Zombie zombie : zombies) {
             this.drawZombie(zombie, g);
+            this.drawHealthBar(zombie, g);
         }
+    }
+
+    private void drawHealthBar(Zombie z,Graphics g){
+        g.setColor(Color.RED);
+        // g.drawRect((int)z.getX(),(int)z.getY()-10,50,5);
+        g.fillRect((int)z.getX(),(int)z.getY()-10,(int)(50*z.getHealthBar()),5);
     }
 
     private void drawZombie(Zombie zombie, Graphics g) {

@@ -9,8 +9,26 @@ public abstract class Zombie {
     private int health;
     private int ID;
     private int zombieType;
+    private int maxHealth;
 
-    
+    public Zombie(float x, float y, int iD, int zombieType) {
+        this.x = x;
+        this.y = y;
+        ID = iD;
+        this.zombieType = zombieType;
+        bounds = new Rectangle((int) x, (int) y, 62, 100);
+        setStartHealth();
+    }
+
+    private void setStartHealth() {
+        this.health = model.Helper.Constant.Zombies.getStartHealth(this.zombieType);
+        this.maxHealth = this.health;
+    }
+
+    public float getHealthBar() {
+        return this.health / (float) this.maxHealth;
+    }
+
     public float getX() {
         return x;
     }
@@ -58,18 +76,10 @@ public abstract class Zombie {
     public void setZombieType(int zombieType) {
         this.zombieType = zombieType;
     }
-    public Zombie(float x, float y, int iD, int zombieType) {
-        this.x = x;
-        this.y = y;
-        ID = iD;
-        this.zombieType = zombieType;
-        bounds = new Rectangle((int) x, (int) y, 62, 100);
+
+    public void move(float x, float y) {
+        this.x += x;
+        this.y += y;
     }
 
-    public void move(float x, float y){
-        this.x+=x;
-        this.y+=y;
-    }
-
-   
 }

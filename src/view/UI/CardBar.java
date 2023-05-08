@@ -14,6 +14,7 @@ public class CardBar implements IMouse {
     private PlantManager plantManager;
     private GamePanel gamePanel;
     private Plant selectedPlant;
+    private Plant displayPlant;
     int w = 65;
     int h = 70;
 
@@ -41,6 +42,12 @@ public class CardBar implements IMouse {
     public void draw(Graphics g) {
         drawButton(g);
 
+    }
+
+    private void drawDisplayPlant(Graphics g) {
+        if (displayPlant != null) {
+            g.drawImage(gamePanel.getPlantManager().getPlantImg()[displayPlant.getPlantType()], 0, 0,50,50, null);
+        }
     }
 
     public void drawButton(Graphics g) {
@@ -123,13 +130,12 @@ public class CardBar implements IMouse {
 
     @Override
     public void mousePressed(int x, int y) {
-     
-     
+
     }
 
     @Override
     public void mouseOver(int x, int y) {
-        
+
     }
 
     @Override
@@ -160,6 +166,10 @@ public class CardBar implements IMouse {
                 plantButtons[i].setMouseOver(false);
             }
         }
+    }
+
+    public void displayPlant(Plant p) {
+        this.displayPlant = p;
     }
 
 }
