@@ -15,7 +15,6 @@ import model.Zombie.finalZombie;
 import model.Zombie.normalZombie;
 import view.Game.GamePanel;
 
-
 public class ZombieManager {
     private GamePanel gamePanel;
     private Image[] zombieImg;
@@ -47,16 +46,18 @@ public class ZombieManager {
 
     public void draw(Graphics g) {
         for (Zombie zombie : zombies) {
-            this.drawZombie(zombie, g);
-            this.drawHealthBar(zombie, g);
+            if (zombie.getAlive()) {
+                this.drawZombie(zombie, g);
+                // this.drawHealthBar(zombie, g);
+            }
         }
     }
 
-    private void drawHealthBar(Zombie z,Graphics g){
-        g.setColor(Color.RED);
-        // g.drawRect((int)z.getX(),(int)z.getY()-10,50,5);
-        g.fillRect((int)z.getX(),(int)z.getY()-10,(int)(50*z.getHealthBar()),5);
-    }
+    // private void drawHealthBar(Zombie z,Graphics g){
+    // g.setColor(Color.RED);
+    // // g.drawRect((int)z.getX(),(int)z.getY()-10,50,5);
+    // g.fillRect((int)z.getX(),(int)z.getY()-10,(int)(50*z.getHealthBar()),5);
+    // }
 
     private void drawZombie(Zombie zombie, Graphics g) {
 
@@ -83,7 +84,13 @@ public class ZombieManager {
 
     public void update() {
         for (Zombie zombie : zombies) {
-            zombie.move(getSpeed(zombie.getZombieType()), 0f);
+            if (zombie.getAlive()) {
+                zombie.move(getSpeed(zombie.getZombieType()), 0f);
+            }
         }
+    }
+
+    public ArrayList<Zombie> getZombies() {
+        return zombies;
     }
 }

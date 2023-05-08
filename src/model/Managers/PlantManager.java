@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import model.Plant.Plant;
 import model.Plant.SunFlower;
+import model.Zombie.Zombie;
 import view.Game.GamePanel;
 import model.Plant.PeaShooter;
 import model.Helper.Constant.Plants;
@@ -69,8 +70,6 @@ public class PlantManager {
             g.drawImage(plantImg[p.getPlantType()], p.getX(), p.getY(), null);
         }
     }
-    
-
 
     private void addPlant(int x, int y, int plantType) {
         switch (plantType) {
@@ -88,13 +87,10 @@ public class PlantManager {
 
     public void addPlant(Plant selectedPlant, int x, int y) {
         plants.add(new Plant(x, y, plantAmount++, selectedPlant.getPlantType()));
-        System.out.println("Add Plant !");
     }
 
     public void update() {
-        for (Plant plant : plants) {
-            // empty
-        }
+        this.attack();
     }
 
     public Image[] getPlantCardImg() {
@@ -109,10 +105,32 @@ public class PlantManager {
         for (Plant p : plants) {
             if (p.getX() == x && p.getY() == y) {
                 return p;
-            }   
+            }
         }
         return null;
     }
 
-   
+    public void attack() {
+        for (Plant p : plants) {
+            for (Zombie z : gamePanel.getZombieManager().getZombies()) {
+                if (z.getAlive()) {
+                    if (p.getPlantType() == peaShooter) {
+                        if (p.getX() + 100 >= z.getX()) {
+                            z.setHealth((int) (z.getHealth() - p.getDmg()));
+                            System.out.println(z.getHealth());
+                            z.checkAlive();
+                        }
+                    }
+                    if (p.getPlantType() == freezePea) {
+                        if (p.getX() + 100 >= z.getX()) {
+                            z.setHealth((int) (z.getHealth() - p.getDmg()));
+                            z.setSpeed(z.getSpeed() - 0.2f);
+                            z.checkAlive();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

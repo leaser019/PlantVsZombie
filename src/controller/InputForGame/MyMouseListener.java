@@ -10,7 +10,6 @@ import view.Game.Game;
 import view.Game.GamePanel;
 
 public class MyMouseListener implements MouseListener, MouseMotionListener {
-    private ZombieManager zombieManager;
     private Game game;
 
     public MyMouseListener(Game game) {
@@ -20,8 +19,6 @@ public class MyMouseListener implements MouseListener, MouseMotionListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
-            game.getGamePanel().setMouseX(e.getX());
-            game.getGamePanel().setMouseY(e.getY());
             game.getGamePanel().mouseClicked(e.getX(), e.getY());  
         }
     }

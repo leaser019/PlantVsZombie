@@ -49,20 +49,20 @@ public class GamePanel extends JPanel implements IMouse {
         zombieManager.draw(g);
         plantManager.draw(g);
         drawSelectedPlant(g);
-        drawHightLight(g);
+        // drawHightLight(g);
     }
 
-    private void drawHightLight(Graphics g){
-        if(selectedPlant!=null){
-            g.setColor(Color.RED);
+    private void drawHightLight(Graphics g) {
+        if (selectedPlant != null) {
+            g.setColor(Color.WHITE);
             g.drawRect(mouseX, mouseY, 111, 120);
         }
     }
+    
 
     private void drawSelectedPlant(Graphics g) {
         if (selectedPlant != null) {
             g.drawImage(plantManager.getPlantImg()[selectedPlant.getPlantType()], mouseX, mouseY, null);
-            System.out.println("DONE");
         }
     }
 
@@ -110,8 +110,7 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void mouseClicked(int x, int y) {
-        System.out.println("left");
-        if (y <= 250) {
+        if (y <= 120) {
             cardBar.mouseClicked(x, y);
         } else {
             if (selectedPlant != null) {
@@ -119,12 +118,11 @@ public class GamePanel extends JPanel implements IMouse {
                     plantManager.addPlant(selectedPlant, mouseX, mouseY);
                     selectedPlant = null;
                 }
-            }
-            else{
-                Plant p =checkPlant(mouseX, mouseY);
-                if(p==null){
+            } else {
+                Plant p = checkPlant(mouseX, mouseY);
+                if (p == null) {
                     return;
-                }else{
+                } else {
                     cardBar.displayPlant(p);
                 }
             }
@@ -132,11 +130,11 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     private Plant checkPlant(int x, int y) {
-        return this.plantManager.checkPlantAt(x,y);
+        return this.plantManager.checkPlantAt(x, y);
     }
 
     public void mousePressed(int x, int y) {
-        if (y <= 250) {
+        if (y <= 120) {
             cardBar.mousePressed(x, y);
         }
     }
@@ -148,11 +146,11 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void mouseMoved(int x, int y) {
-        if (y <= 250) {
+        if (y <= 120) {
             cardBar.mouseMoved(x, y);
         } else {
-            mouseX = x ;
-            mouseY = y ;
+            mouseX = x - 30;
+            mouseY = y - 30;
         }
     }
 
@@ -166,5 +164,7 @@ public class GamePanel extends JPanel implements IMouse {
     @Override
     public void mouseExited(int x, int y) {
     }
-
+    public ZombieManager getZombieManager(){
+        return this.zombieManager;
+    }
 }

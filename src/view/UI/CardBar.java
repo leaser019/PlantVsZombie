@@ -41,20 +41,28 @@ public class CardBar implements IMouse {
 
     public void draw(Graphics g) {
         drawButton(g);
+        drawDisplayPlant(g);
 
     }
 
     private void drawDisplayPlant(Graphics g) {
         if (displayPlant != null) {
-            g.drawImage(gamePanel.getPlantManager().getPlantImg()[displayPlant.getPlantType()], 0, 0,50,50, null);
+            // g.drawImage(gamePanel.getPlantManager().getPlantImg()[displayPlant.getPlantType()],
+            // 0, 0,50,50, null);
+            drawDisplayPlantRange(g);
         }
+    }
+
+    private void drawDisplayPlantRange(Graphics g) {
+        g.setColor(Color.WHITE);
+        g.drawOval(displayPlant.getX(), displayPlant.getY(), 100, 100);
     }
 
     public void drawButton(Graphics g) {
         for (int i = 0; i < plantButtons.length; i++) {
             g.drawImage(gamePanel.getPlantManager().getPlantCardImg()[i], plantButtons[i].x, plantButtons[i].y, null);
             if (plantButtons[i].isMouseOver()) {
-                g.setColor(Color.RED);
+                g.setColor(Color.WHITE);
                 g.drawRect(plantButtons[i].x, plantButtons[i].y, w, h);
             }
         }
@@ -130,6 +138,11 @@ public class CardBar implements IMouse {
 
     @Override
     public void mousePressed(int x, int y) {
+        for(MyButton b : plantButtons){
+            if(b.getBound().contains(x, y)){
+                b.setMousePress(true);
+            }
+        }
 
     }
 
@@ -140,6 +153,7 @@ public class CardBar implements IMouse {
 
     @Override
     public void mouseReleased(int x, int y) {
+        
     }
 
     @Override
