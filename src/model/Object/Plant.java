@@ -1,4 +1,4 @@
-package model.Plant;
+package model.Object;
 
 public class Plant {
     private int x;

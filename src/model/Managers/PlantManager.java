@@ -8,12 +8,12 @@ import java.awt.Toolkit;
 import java.awt.color.ICC_ColorSpace;
 import java.util.ArrayList;
 
-import model.Plant.Plant;
 import model.Plant.SunFlower;
-import model.Zombie.Zombie;
 import view.Game.GamePanel;
 import model.Plant.PeaShooter;
 import model.Helper.Constant.Plants;
+import model.Object.Plant;
+import model.Object.Zombie;
 import model.Plant.FreezePea;
 
 public class PlantManager {
@@ -115,16 +115,18 @@ public class PlantManager {
             for (Zombie z : gamePanel.getZombieManager().getZombies()) {
                 if (z.getAlive()) {
                     if (p.getPlantType() == peaShooter) {
-                        if (p.getX() + 100 >= z.getX()) {
+                        if (p.getX() + 100 >= z.getX() && (p.getY() - 60 <= z.getY())
+                                && (z.getY() <= (p.getY() + 60))) {
                             z.setHealth((int) (z.getHealth() - p.getDmg()));
                             System.out.println(z.getHealth());
                             z.checkAlive();
                         }
                     }
                     if (p.getPlantType() == freezePea) {
-                        if (p.getX() + 100 >= z.getX()) {
+                        if (p.getX() + 100 >= z.getX() && (p.getY() - 60 <= z.getY())
+                                && (z.getY() <= (p.getY() + 60))) {
                             z.setHealth((int) (z.getHealth() - p.getDmg()));
-                            z.setSpeed(z.getSpeed() - 0.2f);
+                            z.setSpeed(z.getSpeed() - 0.002f);
                             z.checkAlive();
                         }
                     }

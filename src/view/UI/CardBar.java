@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 import model.Helper.IMouse;
 import model.Managers.PlantManager;
-import model.Plant.Plant;
+import model.Object.Plant;
 import view.Game.GamePanel;
 
 public class CardBar implements IMouse {

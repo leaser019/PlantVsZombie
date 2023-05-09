@@ -1,4 +1,4 @@
-package model.Zombie;
+package model.Object;
 
 import java.awt.Rectangle;
 

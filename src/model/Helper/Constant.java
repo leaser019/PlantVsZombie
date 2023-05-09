@@ -1,6 +1,20 @@
 package model.Helper;
 
 public class Constant {
+    public static class Projectile {
+        public static final int greenBall = 0;
+        public static final int freezeBall = 1;
+        public static float getSpeed (int projectileType){
+            switch (projectileType){
+                case greenBall:
+                return 0.3f;
+                case freezeBall:
+                return 0.5f;
+            }
+            return 0;
+        }
+    }
+
     public static class Zombies {
         public static final int normalZombie = 0;
         public static final int coneZombie = 1;
@@ -54,7 +68,7 @@ public class Constant {
         public static final int sunFlower = 0;
         public static final int peaShooter = 1;
         public static final int freezePea = 2;
-        
+
         public static int getCost(int plantType) {
             switch (plantType) {
                 case sunFlower:
@@ -66,6 +80,7 @@ public class Constant {
             }
             return 0;
         }
+
         public static float getStartDmg(int plantType) {
             switch (plantType) {
                 case sunFlower:
@@ -77,6 +92,7 @@ public class Constant {
             }
             return 0;
         }
+
         public static float getStartRange(int plantType) {
             switch (plantType) {
                 case sunFlower:
@@ -88,7 +104,8 @@ public class Constant {
             }
             return 0;
         }
-        public static float getStartCoolDown(int plantType){
+
+        public static float getStartCoolDown(int plantType) {
             switch (plantType) {
                 case sunFlower:
                     return 0f;

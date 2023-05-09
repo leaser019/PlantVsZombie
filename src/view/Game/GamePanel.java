@@ -8,7 +8,7 @@ import controller.InputForGame.MyMouseListener;
 import model.Helper.IMouse;
 import model.Managers.PlantManager;
 import model.Managers.ZombieManager;
-import model.Plant.Plant;
+import model.Object.Plant;
 import view.UI.CardBar;
 
 import java.awt.Color;

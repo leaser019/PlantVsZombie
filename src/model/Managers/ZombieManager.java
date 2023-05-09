@@ -8,7 +8,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
-import model.Zombie.Zombie;
+import model.Object.Zombie;
 import model.Zombie.bossZombie;
 import model.Zombie.coneZombie;
 import model.Zombie.finalZombie;
