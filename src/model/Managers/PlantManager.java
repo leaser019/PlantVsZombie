@@ -111,7 +111,9 @@ public class PlantManager {
 
     public void attackByPlant(Plant plant) {
         for (Zombie zombie : gamePanel.getZombieManager().getZombies()) {
+            if(plant.getPlantType()!=0){
             this.attack(plant, zombie);
+            }
         }
     }
 
@@ -132,10 +134,9 @@ public class PlantManager {
     }
 
     public boolean checkX(Plant plant, Zombie zombie) {
-        int widthSize = 999;
-        int range = widthSize - plant.getX();
-        int xPositionPlant = plant.getX() + range;
-        return xPositionPlant >= zombie.getX() && xPositionPlant > 0;
+        int widthSize = 100;
+        int range = 800;
+        return plant.getX() + range >= zombie.getX();
     }
 
     public boolean checkY(Plant plant, Zombie zombie) {

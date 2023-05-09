@@ -8,6 +8,8 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import model.Object.Zombie;
 import model.Zombie.bossZombie;
 import model.Zombie.coneZombie;
@@ -83,10 +85,16 @@ public class ZombieManager {
         for (Zombie zombie : zombies) {
             if (zombie.getAlive()) {
                 zombie.move(getSpeed(zombie.getZombieType()), 0f);
+                exit(zombie);
             }
         }
     }
-
+    public void exit(Zombie zombie){
+        if(zombie.getX()<=0){
+            JOptionPane.showMessageDialog(gamePanel,"You Lose !");  
+           gamePanel.dispose();
+        }
+    }
     public ArrayList<Zombie> getZombies() {
         return zombies;
     }

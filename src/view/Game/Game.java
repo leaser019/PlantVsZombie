@@ -36,7 +36,7 @@ public class Game extends JFrame implements Runnable {
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(gamePanel, BorderLayout.CENTER);
-        setResizable(true);
+        setResizable(false);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\icon.png"));

@@ -177,4 +177,8 @@ public class GamePanel extends JPanel implements IMouse {
     public void shootZombie(Plant plant, Zombie zombie) {
         projectileManager.newProjectile(plant,zombie);
     }
+
+    public void dispose() {
+        game.dispose();
+    }
 }
