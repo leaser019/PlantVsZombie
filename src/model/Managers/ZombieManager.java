@@ -27,7 +27,7 @@ public class ZombieManager {
         this.addZombie(1000, 100, normalZombie);
         this.addZombie(1000, 2 * 100, coneZombie);
         this.addZombie(1000, 3 * 100, coneZombie);
-        this.addZombie(1000, 4 * 100, bossZombie);
+        // this.addZombie(1000, 4 * 100, finalZombie);
 
         this.loadZombieImg();
     }

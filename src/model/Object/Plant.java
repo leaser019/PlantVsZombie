@@ -90,4 +90,15 @@ public class Plant {
         this.dmg = dmg;
     }
 
+    public boolean isCoolDownOver(int Down) {
+        if (Down > this.coolDown) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void resetCoolDown() {
+    }
+
 }

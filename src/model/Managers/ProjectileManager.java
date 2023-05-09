@@ -65,14 +65,13 @@ public class ProjectileManager {
         float speed = model.Helper.Constant.Projectile.getSpeed(type);
 
         int xDis = (int) Math.abs((float) plant.getX() - zombie.getX());
-        int yDis = (int) Math.abs((float) plant.getX() - zombie.getY());
-        float xPix = xDis / (xDis + yDis);
+        int yDis = (int) Math.abs((float) plant.getY() - zombie.getY());
+        float xPix = (float) xDis / (xDis + yDis);
         float xSpeed = xPix * speed;
-        float ySpeed = speed - xSpeed;
-        xSpeed *= -1;
-        ySpeed *= -1;
-
-        projectiles.add(new Projectile(plant.getX(), plant.getY(), xSpeed, ySpeed, id++, type));
+        float ySpeed = xSpeed - speed;
+        
+        Projectile temp = new Projectile(plant.getX()+35, plant.getY()+12, xSpeed, ySpeed, id++, type);
+        projectiles.add(temp);
     }
 
     public int getProjectile(Plant plant) {

@@ -107,30 +107,43 @@ public class PlantManager {
     }
 
     public void attack() {
+        int coolDown = 0;
         for (Plant plant : plants) {
             for (Zombie zombie : gamePanel.getZombieManager().getZombies()) {
+                coolDown=coolDown+2;
                 if (zombie.getAlive()) {
-                    gamePanel.shootZombie(plant,zombie);
                     if (plant.getPlantType() == peaShooter) {
-                        if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
-                                && (zombie.getY() <= (plant.getY() + 50))) {
-                            zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
-                            System.out.println(zombie.getHealth());
-                            zombie.checkAlive();
+                        if (plant.isCoolDownOver(coolDown)) {
+                            if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
+                                    && (zombie.getY() <= (plant.getY() + 50))) {
+                                gamePanel.shootZombie(plant, zombie);
+                                zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
+                                System.out.println(zombie.getHealth());
+                                zombie.checkAlive();
+                                coolDown=this.resetValue();
+                            }
                         }
                     }
                     if (plant.getPlantType() == freezePea) {
                         if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
                                 && (zombie.getY() <= (plant.getY() + 50))) {
-                            zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
-                            zombie.setSpeed(zombie.getSpeed() - 0.002f);
-                            System.out.println(zombie.getHealth());
-                            zombie.checkAlive();
+                            if (plant.isCoolDownOver(coolDown)) {
+                                gamePanel.shootZombie(plant, zombie);
+                                zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
+                                zombie.setSpeed(zombie.getSpeed() - 0.002f);
+                                System.out.println(zombie.getHealth());
+                                zombie.checkAlive();
+                                coolDown=this.resetValue();
+                            }
                         }
                     }
                 }
             }
         }
+    }
+
+    private int resetValue() {
+        return 0;
     }
 
 }

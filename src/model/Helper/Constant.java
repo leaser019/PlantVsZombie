@@ -8,9 +8,9 @@ public class Constant {
         public static float getSpeed(int projectileType) {
             switch (projectileType) {
                 case greenBall:
-                    return 0.3f;
+                    return 20f;
                 case freezeBall:
-                    return 0.5f;
+                    return 25f;
             }
             return 0;
         }
@@ -87,9 +87,9 @@ public class Constant {
                 case sunFlower:
                     return 0f;
                 case peaShooter:
-                    return 0.01f;
+                    return 0.00001f;
                 case freezePea:
-                    return 0.02f;
+                    return 0.00002f;
             }
             return 0;
         }
@@ -111,9 +111,9 @@ public class Constant {
                 case sunFlower:
                     return 0f;
                 case peaShooter:
-                    return 10f;
+                    return 3f;
                 case freezePea:
-                    return 10f;
+                    return 2f;
             }
             return 0;
         }
