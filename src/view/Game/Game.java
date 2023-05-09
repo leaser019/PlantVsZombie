@@ -12,6 +12,8 @@ import java.awt.Font;
 public class Game extends JFrame implements Runnable {
     private double setFPS = 80;
     private double setUPS = 60;
+    private int widthSize = 999;
+    private int heightSize = 750;
     private Thread gameTheard;
 
     public static void main(String[] args) {
@@ -30,11 +32,11 @@ public class Game extends JFrame implements Runnable {
 
     public void init() {
         gamePanel = new GamePanel();
-        this.setSize(999, 750);//995=111*9,750=150*5
+        this.setSize(widthSize, heightSize);//995=111*9,750=150*5
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(gamePanel, BorderLayout.CENTER);
-        setResizable(false);
+        setResizable(true);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\icon.png"));
@@ -103,4 +105,65 @@ public class Game extends JFrame implements Runnable {
     public GamePanel getGamePanel(){
         return gamePanel;
     }
+
+    public double getSetFPS() {
+        return setFPS;
+    }
+
+    public void setSetFPS(double setFPS) {
+        this.setFPS = setFPS;
+    }
+
+    public double getSetUPS() {
+        return setUPS;
+    }
+
+    public void setSetUPS(double setUPS) {
+        this.setUPS = setUPS;
+    }
+
+    public int getWidthSize() {
+        return widthSize;
+    }
+
+    public void setWidthSize(int widthSize) {
+        this.widthSize = widthSize;
+    }
+
+    public int getHeightSize() {
+        return heightSize;
+    }
+
+    public void setHeightSize(int heightSize) {
+        this.heightSize = heightSize;
+    }
+
+    public Thread getGameTheard() {
+        return gameTheard;
+    }
+
+    public void setGameTheard(Thread gameTheard) {
+        this.gameTheard = gameTheard;
+    }
+
+    public void setGamePanel(GamePanel gamePanel) {
+        this.gamePanel = gamePanel;
+    }
+
+    public MyMouseListener getMyMouseListener() {
+        return myMouseListener;
+    }
+
+    public void setMyMouseListener(MyMouseListener myMouseListener) {
+        this.myMouseListener = myMouseListener;
+    }
+
+    public MyKeyBoardListener getMyKeyBoardListener() {
+        return myKeyBoardListener;
+    }
+
+    public void setMyKeyBoardListener(MyKeyBoardListener myKeyBoardListener) {
+        this.myKeyBoardListener = myKeyBoardListener;
+    }
+    
 }

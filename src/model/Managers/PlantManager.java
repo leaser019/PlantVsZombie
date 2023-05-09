@@ -112,15 +112,13 @@ public class PlantManager {
     public void attackByPlant(Plant plant) {
         for (Zombie zombie : gamePanel.getZombieManager().getZombies()) {
             this.attack(plant, zombie);
-            }
         }
-    
+    }
 
     public void attack(Plant plant, Zombie zombie) {
         if (zombie.getAlive()) {
             if (plant.isCoolDownOver()) {
-                if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
-                        && (zombie.getY() <= (plant.getY() + 50))) {
+                if (checkX(plant, zombie) && checkY(plant, zombie)) {
                     gamePanel.shootZombie(plant, zombie);
                     zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
                     int affectZombieSpeed = (int) model.Helper.Constant.Plants.getAffectOnZombie(plant.getPlantType());
@@ -132,4 +130,17 @@ public class PlantManager {
             }
         }
     }
+
+    public boolean checkX(Plant plant, Zombie zombie) {
+        int widthSize = 999;
+        int range = widthSize - plant.getX();
+        int xPositionPlant = plant.getX() + range;
+        return xPositionPlant >= zombie.getX() && xPositionPlant > 0;
+    }
+
+    public boolean checkY(Plant plant, Zombie zombie) {
+        return (plant.getY() - 50 <= zombie.getY())
+                && (zombie.getY() <= (plant.getY() + 50));
+    }
+
 }

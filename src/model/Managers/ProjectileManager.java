@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import model.Object.Plant;
 import model.Object.Projectile;
 import model.Object.Zombie;
-import model.Plant.FreezePea;
-import model.Plant.PeaShooter;
 import view.Game.GamePanel;
 
 public class ProjectileManager {
