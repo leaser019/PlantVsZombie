@@ -6,6 +6,7 @@ public class Plant {
     private int id;
     private int plantType;
     private float coolDown, range, dmg;
+    private float checkCoolDown;
 
     public Plant(int x, int y, int id, int plantType) {
         this.x = x;
@@ -19,6 +20,7 @@ public class Plant {
 
     private void setDefaultCoolDown() {
         this.coolDown = model.Helper.Constant.Plants.getStartCoolDown(this.plantType);
+        this.checkCoolDown = 0;
     }
 
     private void setDefaultRange() {
@@ -90,15 +92,15 @@ public class Plant {
         this.dmg = dmg;
     }
 
-    public boolean isCoolDownOver(int Down) {
-        if (Down > this.coolDown) {
-            return true;
-        } else {
-            return false;
-        }
+    public boolean isCoolDownOver() {
+        return this.checkCoolDown >= this.coolDown;
     }
 
     public void resetCoolDown() {
+        this.checkCoolDown = 0;
     }
 
+    public void updateCoolDown() {
+        this.checkCoolDown++;
+    }
 }

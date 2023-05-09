@@ -86,7 +86,10 @@ public class PlantManager {
     }
 
     public void update() {
-        this.attack();
+        for (Plant plant : plants) {
+            this.attackByPlant(plant);
+            plant.updateCoolDown();
+        }
     }
 
     public Image[] getPlantCardImg() {
@@ -106,44 +109,27 @@ public class PlantManager {
         return null;
     }
 
-    public void attack() {
-        int coolDown = 0;
-        for (Plant plant : plants) {
-            for (Zombie zombie : gamePanel.getZombieManager().getZombies()) {
-                coolDown=coolDown+2;
-                if (zombie.getAlive()) {
-                    if (plant.getPlantType() == peaShooter) {
-                        if (plant.isCoolDownOver(coolDown)) {
-                            if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
-                                    && (zombie.getY() <= (plant.getY() + 50))) {
-                                gamePanel.shootZombie(plant, zombie);
-                                zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
-                                System.out.println(zombie.getHealth());
-                                zombie.checkAlive();
-                                coolDown=this.resetValue();
-                            }
-                        }
-                    }
-                    if (plant.getPlantType() == freezePea) {
-                        if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
-                                && (zombie.getY() <= (plant.getY() + 50))) {
-                            if (plant.isCoolDownOver(coolDown)) {
-                                gamePanel.shootZombie(plant, zombie);
-                                zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
-                                zombie.setSpeed(zombie.getSpeed() - 0.002f);
-                                System.out.println(zombie.getHealth());
-                                zombie.checkAlive();
-                                coolDown=this.resetValue();
-                            }
-                        }
-                    }
+    public void attackByPlant(Plant plant) {
+        for (Zombie zombie : gamePanel.getZombieManager().getZombies()) {
+            this.attack(plant, zombie);
+            }
+        }
+    
+
+    public void attack(Plant plant, Zombie zombie) {
+        if (zombie.getAlive()) {
+            if (plant.isCoolDownOver()) {
+                if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
+                        && (zombie.getY() <= (plant.getY() + 50))) {
+                    gamePanel.shootZombie(plant, zombie);
+                    zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
+                    int affectZombieSpeed = (int) model.Helper.Constant.Plants.getAffectOnZombie(plant.getPlantType());
+                    zombie.setSpeed(zombie.getSpeed() - affectZombieSpeed);
+                    System.out.println(zombie.getHealth());
+                    zombie.checkAlive();
+                    plant.resetCoolDown();
                 }
             }
         }
     }
-
-    private int resetValue() {
-        return 0;
-    }
-
 }

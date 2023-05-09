@@ -1,5 +1,7 @@
 package model.Helper;
 
+import model.Plant.SunFlower;
+
 public class Constant {
     public static class Projectile {
         public static final int greenBall = 0;
@@ -8,9 +10,9 @@ public class Constant {
         public static float getSpeed(int projectileType) {
             switch (projectileType) {
                 case greenBall:
-                    return 20f;
+                    return 5f;
                 case freezeBall:
-                    return 25f;
+                    return 10f;
             }
             return 0;
         }
@@ -87,9 +89,9 @@ public class Constant {
                 case sunFlower:
                     return 0f;
                 case peaShooter:
-                    return 0.00001f;
+                    return 10f;
                 case freezePea:
-                    return 0.00002f;
+                    return 20f;
             }
             return 0;
         }
@@ -111,9 +113,21 @@ public class Constant {
                 case sunFlower:
                     return 0f;
                 case peaShooter:
-                    return 3f;
+                    return 100f;
                 case freezePea:
-                    return 2f;
+                    return 50f;
+            }
+            return 0;
+        }
+
+        public static float getAffectOnZombie(int plantType) {
+            switch (plantType) {
+                case sunFlower:
+                    return 0f;
+                case peaShooter:
+                    return 1.2f;
+                case freezePea:
+                    return 1.9f;
             }
             return 0;
         }
