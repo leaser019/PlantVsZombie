@@ -4,24 +4,32 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Point2D.Float;
 
 public class Projectile {
-    private Point2D.Float pos;
+    private Point2D.Float position;
     private int id;
     private int projectileType;
+    private float xSpeed, ySpeed;
     private boolean active;
 
-    public Projectile(Float pos, int id, int projectileType) {
-        this.pos = pos;
+    public Projectile(float x, float y,float xSpeed, float ySpeed, int id, int projectileType) {
+        this.position = new Point2D.Float(x, y);
         this.id = id;
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
         this.projectileType = projectileType;
         this.active = true;
     }
 
-    public Point2D.Float getPos() {
-        return pos;
+    public void move() {
+        position.x += xSpeed;
+        position.y += ySpeed;
     }
 
-    public void setPos(Point2D.Float pos) {
-        this.pos = pos;
+    public Point2D.Float getPosition() {
+        return position;
+    }
+
+    public void setPosition(Point2D.Float position) {
+        this.position = position;
     }
 
     public int getId() {

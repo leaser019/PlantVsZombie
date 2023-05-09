@@ -5,13 +5,11 @@ import static model.Helper.Constant.Plants.*;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.awt.color.ICC_ColorSpace;
 import java.util.ArrayList;
 
 import model.Plant.SunFlower;
 import view.Game.GamePanel;
 import model.Plant.PeaShooter;
-import model.Helper.Constant.Plants;
 import model.Object.Plant;
 import model.Object.Zombie;
 import model.Plant.FreezePea;
@@ -64,8 +62,6 @@ public class PlantManager {
     }
 
     private void drawPlant(Plant plant, Graphics g) {
-        // g.drawImage(plantImg[plant.getPlantType()], (int) plant.getX(), (int)
-        // plant.getY(), null);
         for (Plant p : plants) {
             g.drawImage(plantImg[p.getPlantType()], p.getX(), p.getY(), null);
         }
@@ -111,23 +107,25 @@ public class PlantManager {
     }
 
     public void attack() {
-        for (Plant p : plants) {
-            for (Zombie z : gamePanel.getZombieManager().getZombies()) {
-                if (z.getAlive()) {
-                    if (p.getPlantType() == peaShooter) {
-                        if (p.getX() + 100 >= z.getX() && (p.getY() - 60 <= z.getY())
-                                && (z.getY() <= (p.getY() + 60))) {
-                            z.setHealth((int) (z.getHealth() - p.getDmg()));
-                            System.out.println(z.getHealth());
-                            z.checkAlive();
+        for (Plant plant : plants) {
+            for (Zombie zombie : gamePanel.getZombieManager().getZombies()) {
+                if (zombie.getAlive()) {
+                    gamePanel.shootZombie(plant,zombie);
+                    if (plant.getPlantType() == peaShooter) {
+                        if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
+                                && (zombie.getY() <= (plant.getY() + 50))) {
+                            zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
+                            System.out.println(zombie.getHealth());
+                            zombie.checkAlive();
                         }
                     }
-                    if (p.getPlantType() == freezePea) {
-                        if (p.getX() + 100 >= z.getX() && (p.getY() - 60 <= z.getY())
-                                && (z.getY() <= (p.getY() + 60))) {
-                            z.setHealth((int) (z.getHealth() - p.getDmg()));
-                            z.setSpeed(z.getSpeed() - 0.002f);
-                            z.checkAlive();
+                    if (plant.getPlantType() == freezePea) {
+                        if (plant.getX() + 300 >= zombie.getX() && (plant.getY() - 50 <= zombie.getY())
+                                && (zombie.getY() <= (plant.getY() + 50))) {
+                            zombie.setHealth((int) (zombie.getHealth() - plant.getDmg()));
+                            zombie.setSpeed(zombie.getSpeed() - 0.002f);
+                            System.out.println(zombie.getHealth());
+                            zombie.checkAlive();
                         }
                     }
                 }

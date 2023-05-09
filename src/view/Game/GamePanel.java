@@ -7,8 +7,10 @@ import controller.InputForGame.MyKeyBoardListener;
 import controller.InputForGame.MyMouseListener;
 import model.Helper.IMouse;
 import model.Managers.PlantManager;
+import model.Managers.ProjectileManager;
 import model.Managers.ZombieManager;
 import model.Object.Plant;
+import model.Object.Zombie;
 import view.UI.CardBar;
 
 import java.awt.Color;
@@ -19,6 +21,7 @@ public class GamePanel extends JPanel implements IMouse {
     private Game game;
     private ZombieManager zombieManager;
     private PlantManager plantManager;
+    private ProjectileManager projectileManager;
     private Image backGround;
     private MyKeyBoardListener keyBoardListener;
     private MyMouseListener mouseListener;
@@ -35,7 +38,7 @@ public class GamePanel extends JPanel implements IMouse {
         cardBar = new CardBar(116, 15, 450, 80, this);
         zombieManager = new ZombieManager(this);
         plantManager = new PlantManager(this);
-
+        projectileManager = new ProjectileManager(this);
     }
 
     public void setBackGround(Graphics g) {
@@ -48,17 +51,18 @@ public class GamePanel extends JPanel implements IMouse {
         cardBar.draw(g);
         zombieManager.draw(g);
         plantManager.draw(g);
+        projectileManager.draw(g);
         drawSelectedPlant(g);
-        // drawHightLight(g);
     }
 
     private void drawHightLight(Graphics g) {
+        int withHightLight = 111;
+        int heightHightLight = 120;
         if (selectedPlant != null) {
             g.setColor(Color.WHITE);
-            g.drawRect(mouseX, mouseY, 111, 120);
+            g.drawRect(mouseX, mouseY, withHightLight, heightHightLight);
         }
     }
-    
 
     private void drawSelectedPlant(Graphics g) {
         if (selectedPlant != null) {
@@ -75,6 +79,7 @@ public class GamePanel extends JPanel implements IMouse {
     public void updateGame() {
         zombieManager.update();
         plantManager.update();
+        projectileManager.update();
     }
 
     public void initInput() {
@@ -164,7 +169,12 @@ public class GamePanel extends JPanel implements IMouse {
     @Override
     public void mouseExited(int x, int y) {
     }
-    public ZombieManager getZombieManager(){
+
+    public ZombieManager getZombieManager() {
         return this.zombieManager;
+    }
+
+    public void shootZombie(Plant plant, Zombie zombie) {
+        projectileManager.newProjectile(plant,zombie);
     }
 }

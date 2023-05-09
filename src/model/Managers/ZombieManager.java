@@ -28,7 +28,6 @@ public class ZombieManager {
         this.addZombie(1000, 2 * 100, coneZombie);
         this.addZombie(1000, 3 * 100, coneZombie);
         this.addZombie(1000, 4 * 100, bossZombie);
-        this.addZombie(1000, 5 * 100, finalZombie);
 
         this.loadZombieImg();
     }
@@ -48,16 +47,14 @@ public class ZombieManager {
         for (Zombie zombie : zombies) {
             if (zombie.getAlive()) {
                 this.drawZombie(zombie, g);
-                // this.drawHealthBar(zombie, g);
             }
         }
     }
 
-    // private void drawHealthBar(Zombie z,Graphics g){
-    // g.setColor(Color.RED);
-    // // g.drawRect((int)z.getX(),(int)z.getY()-10,50,5);
-    // g.fillRect((int)z.getX(),(int)z.getY()-10,(int)(50*z.getHealthBar()),5);
-    // }
+    private void drawHealthBar(Zombie z, Graphics g) {
+        g.setColor(Color.RED);
+        g.fillRect((int) z.getX(), (int) z.getY() - 10, (int) (50 * z.getHealthBar()), 5);
+    }
 
     private void drawZombie(Zombie zombie, Graphics g) {
 

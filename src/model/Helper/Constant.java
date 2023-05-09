@@ -4,12 +4,13 @@ public class Constant {
     public static class Projectile {
         public static final int greenBall = 0;
         public static final int freezeBall = 1;
-        public static float getSpeed (int projectileType){
-            switch (projectileType){
+
+        public static float getSpeed(int projectileType) {
+            switch (projectileType) {
                 case greenBall:
-                return 0.3f;
+                    return 0.3f;
                 case freezeBall:
-                return 0.5f;
+                    return 0.5f;
             }
             return 0;
         }
