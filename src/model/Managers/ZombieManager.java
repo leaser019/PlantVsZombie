@@ -30,7 +30,7 @@ public class ZombieManager {
         this.addZombie(1000, 2 * 100, coneZombie);
         this.addZombie(1000, 3 * 100, coneZombie);
         this.addZombie(2000, 4 * 100, finalZombie);
-        this.addZombie(10, 222, normalZombie);
+        // this.addZombie(10, 222, normalZombie);
 
         this.loadZombieImg();
     }
@@ -94,8 +94,8 @@ public class ZombieManager {
     public void exit(Zombie zombie) {
         if (zombie.getX() <= 0) {
             this.gameOver = new GameOver();
-            gamePanel.getGame().getGameTheard().interrupt();
             gamePanel.getGame().setVisible(false);
+            gamePanel.getGame().getGameTheard().interrupt();
         }
     }
 

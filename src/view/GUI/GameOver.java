@@ -54,7 +54,7 @@ public class GameOver extends JFrame {
         setContentPane(contentPane);
 
         JLabel lblNewLabel = new JLabel("New label");
-        lblNewLabel.setIcon(new ImageIcon("lib\\image\\comingSoon.png"));
+        lblNewLabel.setIcon(new ImageIcon("lib\\image\\gameOver.png"));
         lblNewLabel.addMouseListener(MouseListener);
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(
