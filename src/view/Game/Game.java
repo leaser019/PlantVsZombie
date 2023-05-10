@@ -1,3 +1,14 @@
+/* Team Name: Chicken Team.
+Group Number: G01 - L02.
+Members:
+    Võ Minh Khang - ITCSIU21136
+    Nguyễn Hoàng Gia Ân - ITCSIU21161
+    Nguyễn Trọng Nguyên - ITITIU21263
+Choice of game: Plants and Zombies.
+ Purpose: "Plants vs. Zombies" is a popular tower defense game 
+where players use plants to defend their home from zombies. 
+*/
+
 package view.Game;
 
 import javax.swing.JFrame;
@@ -32,7 +43,7 @@ public class Game extends JFrame implements Runnable {
 
     public void init() {
         gamePanel = new GamePanel();
-        this.setSize(widthSize, heightSize);//995=111*9,750=150*5
+        this.setSize(widthSize, heightSize);// 995=111*9,750=150*5
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
         this.add(gamePanel, BorderLayout.CENTER);
@@ -102,7 +113,7 @@ public class Game extends JFrame implements Runnable {
         requestFocus();
     }
 
-    public GamePanel getGamePanel(){
+    public GamePanel getGamePanel() {
         return gamePanel;
     }
 
@@ -165,5 +176,5 @@ public class Game extends JFrame implements Runnable {
     public void setMyKeyBoardListener(MyKeyBoardListener myKeyBoardListener) {
         this.myKeyBoardListener = myKeyBoardListener;
     }
-    
+
 }
