@@ -17,7 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controller.GUI.ComingSoon.ComingSoonMouseListener;
+import controller.GUI.Sense.ComingSoonMouseListener;
 
 import javax.swing.JLabel;
 import javax.swing.GroupLayout;

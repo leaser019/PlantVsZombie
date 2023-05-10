@@ -9,22 +9,22 @@ Choice of game: Plants and Zombies.
 where players use plants to defend their home from zombies. 
 */
 
-package controller.GUI.GameOver;
+package controller.GUI.Sense;
 
 import java.awt.event.*;
 
-import view.GUI.GameOver;
+import view.GUI.ComingSoon;
 
-public class GameOverMouseListener implements MouseListener {
-    private GameOver go;
+public class ComingSoonMouseListener implements MouseListener {
+    private ComingSoon comingSoon;
 
-    public GameOverMouseListener(GameOver go) {
-        this.go = go;
+    public ComingSoonMouseListener(ComingSoon comingSoon2) {
+        this.comingSoon = comingSoon2;
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        this.go.backToMenu();
+        this.comingSoon.backToMenu();
     }
 
     @Override

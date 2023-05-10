@@ -11,13 +11,11 @@ where players use plants to defend their home from zombies.
 
 package view.GUI;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controller.GUI.Sense.GameOverMouseListener;
+import controller.GUI.Sense.GameWinMouseListener;
 
 import javax.swing.JLabel;
 import javax.swing.GroupLayout;
@@ -26,30 +24,15 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Toolkit;
 
-public class GameOver extends JFrame {
+public class GameWin extends JFrame {
     private JPanel contentPane;
 
-    /**
-     * Launch the application.
-     */
     public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ComingSoon frame = new ComingSoon();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        GameWin gw = new GameWin();
     }
 
-    /**
-     * Create the frame.
-     */
-    public GameOver() {
-        GameOverMouseListener MouseListener = new GameOverMouseListener(this);
+    public GameWin() {
+        GameWinMouseListener MouseListener = new GameWinMouseListener(this);
         setResizable(false);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
         setIconImage(Toolkit.getDefaultToolkit().getImage(
@@ -65,7 +48,7 @@ public class GameOver extends JFrame {
         setContentPane(contentPane);
 
         JLabel lblNewLabel = new JLabel("New label");
-        lblNewLabel.setIcon(new ImageIcon("lib\\image\\gameOver.png"));
+        lblNewLabel.setIcon(new ImageIcon("lib\\image\\gameWinner.png"));
         lblNewLabel.addMouseListener(MouseListener);
         GroupLayout gl_contentPane = new GroupLayout(contentPane);
         gl_contentPane.setHorizontalGroup(

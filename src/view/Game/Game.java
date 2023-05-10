@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 
 import controller.InputForGame.MyKeyBoardListener;
 import controller.InputForGame.MyMouseListener;
+import view.GUI.GameWin;
 
 import java.awt.Toolkit;
 import java.awt.BorderLayout;
@@ -32,6 +33,7 @@ public class Game extends JFrame implements Runnable {
     }
 
     private GamePanel gamePanel;
+    private GameWin gameWin;
     private MyMouseListener myMouseListener;
     private MyKeyBoardListener myKeyBoardListener;
 
@@ -73,6 +75,9 @@ public class Game extends JFrame implements Runnable {
         double timePerUpdate = Math.pow(10, 9) / setUPS;
         double lastTimeFPS = System.nanoTime();
         double lastTimeUPS = System.nanoTime();
+        double startTime = System.currentTimeMillis();
+        double countTime = 0;
+
         int updateGame = 0;
         int frame = 0;
         double now;
@@ -80,11 +85,11 @@ public class Game extends JFrame implements Runnable {
         while (true) {
 
             now = System.nanoTime();
-
+            countTime = System.currentTimeMillis();
             // Render
             if (now - lastTimeFPS >= timePerFrame) {
                 frame++;
-                lastTimeFPS = System.nanoTime();
+                lastTimeFPS = System.nanoTime();           
                 repaint();
             }
             // Update
@@ -96,6 +101,7 @@ public class Game extends JFrame implements Runnable {
             // FPS Counter & UPS Counter
             if (System.currentTimeMillis() - lastTimeCheck >= 1000) {
                 System.out.println("FPS: " + frame + "| UPS: " + updateGame);
+                System.out.println("Time On Game: "+(int)(countTime-startTime)/1000+" s");
                 updateGame = 0;
                 frame = 0;
                 lastTimeCheck = System.currentTimeMillis();
@@ -176,5 +182,11 @@ public class Game extends JFrame implements Runnable {
     public void setMyKeyBoardListener(MyKeyBoardListener myKeyBoardListener) {
         this.myKeyBoardListener = myKeyBoardListener;
     }
+
+    public void winGame() {
+        this.gameWin = new GameWin();
+        this.dispose();
+    }
+
 
 }

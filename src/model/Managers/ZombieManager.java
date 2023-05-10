@@ -24,11 +24,13 @@ import model.Zombie.bossZombie;
 import model.Zombie.coneZombie;
 import model.Zombie.finalZombie;
 import model.Zombie.normalZombie;
-import view.GUI.GameOver;
+import view.GUI.GameWin;
 import view.Game.GamePanel;
 
 public class ZombieManager {
-    private GameOver gameOver;
+    private static int numZombie = 0;
+    private static int zombieKilled = 0;
+    private GameWin gameOver;
     private GamePanel gamePanel;
     private Image[] zombieImg;
     private ArrayList<Zombie> zombies = new ArrayList<>();
@@ -40,6 +42,7 @@ public class ZombieManager {
         this.addZombie(1000, 100, normalZombie);
         this.addZombie(1000, 2 * 100, coneZombie);
         this.addZombie(1000, 3 * 100, coneZombie);
+        this.addZombie(1000, 3 * 100, normalZombie);
         this.addZombie(2000, 4 * 100, finalZombie);
         // this.addZombie(10, 222, normalZombie);
 
@@ -91,20 +94,32 @@ public class ZombieManager {
                 zombies.add(new finalZombie(x, y, 0));
                 break;
         }
+        numZombie++;
     }
 
     public void update() {
+
         for (Zombie zombie : zombies) {
             if (zombie.getAlive()) {
                 zombie.move(getSpeed(zombie.getZombieType()), 0f);
                 this.exit(zombie);
+            }else{
+                zombieKilled++;
             }
+            if(zombieKilled==numZombie){
+                this.winGame();
+            }
+
         }
+    }
+
+    private void winGame() {
+        this.gamePanel.getGame().winGame();
     }
 
     public void exit(Zombie zombie) {
         if (zombie.getX() <= 0) {
-            this.gameOver = new GameOver();
+            this.gameOver = new GameWin();
             gamePanel.getGame().setVisible(false);
             gamePanel.getGame().getGameTheard().interrupt();
         }
