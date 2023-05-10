@@ -1,9 +1,8 @@
-package controller.MainMenu.Menu;
+package controller.GUI.Menu;
 
-import java.awt.*;
 import java.awt.event.*;
 
-import view.MainMenu.MenuView;
+import view.GUI.MenuView;
 
 public class MenuController implements ActionListener {
     private MenuView menuView;
@@ -16,7 +15,6 @@ public class MenuController implements ActionListener {
         if(button.equals("Exit")){
             this.menuView.exitTab();
         }
-        // throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
     
 }

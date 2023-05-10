@@ -1,7 +1,5 @@
 package model.Helper;
 
-import model.Plant.SunFlower;
-
 public class Constant {
     public static class Projectile {
         public static final int greenBall = 0;

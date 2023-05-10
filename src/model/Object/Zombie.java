@@ -39,6 +39,11 @@ public abstract class Zombie {
         return this.health / (float) this.maxHealth;
     }
 
+    public void updateBox(){
+        bounds.x = (int) this.getX();
+        bounds.y = (int) this.getY();
+    }
+
     public void checkAlive() {
         if (this.health <= 0) {
             this.alive = false;
@@ -48,6 +53,7 @@ public abstract class Zombie {
     public void move(float x, float y) {
         this.x += x;
         this.y += y;
+        this.updateBox();
     }
 
     public float getX() {

@@ -2,7 +2,7 @@ package test;
 
 import java.awt.EventQueue;
 
-import view.MainMenu.MenuView;
+import view.GUI.MenuView;
 
 public class App {
     public static void main(String[] args) {

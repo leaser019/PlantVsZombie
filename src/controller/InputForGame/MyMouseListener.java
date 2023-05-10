@@ -1,13 +1,10 @@
 package controller.InputForGame;
 
-import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import model.Managers.ZombieManager;
 import view.Game.Game;
-import view.Game.GamePanel;
 
 public class MyMouseListener implements MouseListener, MouseMotionListener {
     private Game game;

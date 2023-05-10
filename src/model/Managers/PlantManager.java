@@ -134,7 +134,6 @@ public class PlantManager {
     }
 
     public boolean checkX(Plant plant, Zombie zombie) {
-        int widthSize = 100;
         int range = 800;
         return plant.getX() + range >= zombie.getX();
     }

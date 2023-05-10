@@ -1,18 +1,17 @@
-package view.MainMenu;
+package view.GUI;
 
-import java.awt.*;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import controller.MainMenu.Menu.MenuController;
-import controller.MainMenu.Menu.MenuMouseComingSoon;
-import controller.MainMenu.Menu.MenuMouseExitController;
-import controller.MainMenu.Menu.MenuMouseHelp;
-import controller.MainMenu.Menu.MenuMouseOption;
-import controller.MainMenu.Menu.MenuMouseStarAdventure;
+import controller.GUI.Menu.MenuController;
+import controller.GUI.Menu.MenuMouseComingSoon;
+import controller.GUI.Menu.MenuMouseExitController;
+import controller.GUI.Menu.MenuMouseHelp;
+import controller.GUI.Menu.MenuMouseOption;
+import controller.GUI.Menu.MenuMouseStarAdventure;
 import view.Game.Game;
 import view.Game.GamePanel;
 
@@ -20,8 +19,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JMenuItem;

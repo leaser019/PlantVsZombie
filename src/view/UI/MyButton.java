@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import model.Helper.IMouse;
-
 public class MyButton {
     int x;
     int y;

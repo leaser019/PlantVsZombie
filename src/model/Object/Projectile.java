@@ -1,7 +1,6 @@
 package model.Object;
 
 import java.awt.geom.Point2D;
-import java.awt.geom.Point2D.Float;
 
 public class Projectile {
     private Point2D.Float position;

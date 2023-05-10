@@ -55,7 +55,16 @@ public class ProjectileManager {
         for (Projectile projectile : projectiles) {
             projectile.move();
         }
+    }
 
+    public boolean isProjectileHitZombie(Projectile projectile) {
+        for (Zombie zombie : gamePanel.getZombieManager().getZombies()) {
+            if (zombie.getBounds().contains((int) projectile.getPosition().getX(),
+                    (int) projectile.getPosition().getY())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void newProjectile(Plant plant, Zombie zombie) {
@@ -67,8 +76,10 @@ public class ProjectileManager {
         float xPix = (float) xDis / (xDis + yDis);
         float xSpeed = xPix * speed;
         float ySpeed = xSpeed - speed;
-        
-        Projectile temp = new Projectile(plant.getX()+35, plant.getY()+12, xSpeed, ySpeed, id++, type);
+
+        int xAddOn = 35;
+        int yAddOn = 12;
+        Projectile temp = new Projectile(plant.getX() + xAddOn, plant.getY() + yAddOn, xSpeed, ySpeed, id++, type);
         projectiles.add(temp);
     }
 
@@ -81,4 +92,5 @@ public class ProjectileManager {
         }
         return 0;
     }
+
 }

@@ -8,16 +8,16 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 import model.Object.Zombie;
 import model.Zombie.bossZombie;
 import model.Zombie.coneZombie;
 import model.Zombie.finalZombie;
 import model.Zombie.normalZombie;
+import view.GUI.GameOver;
 import view.Game.GamePanel;
 
 public class ZombieManager {
+    private GameOver gameOver;
     private GamePanel gamePanel;
     private Image[] zombieImg;
     private ArrayList<Zombie> zombies = new ArrayList<>();
@@ -30,6 +30,7 @@ public class ZombieManager {
         this.addZombie(1000, 2 * 100, coneZombie);
         this.addZombie(1000, 3 * 100, coneZombie);
         this.addZombie(2000, 4 * 100, finalZombie);
+        this.addZombie(10, 222, normalZombie);
 
         this.loadZombieImg();
     }
@@ -85,16 +86,19 @@ public class ZombieManager {
         for (Zombie zombie : zombies) {
             if (zombie.getAlive()) {
                 zombie.move(getSpeed(zombie.getZombieType()), 0f);
-                exit(zombie);
+                this.exit(zombie);
             }
         }
     }
-    public void exit(Zombie zombie){
-        if(zombie.getX()<=0){
-            JOptionPane.showMessageDialog(gamePanel,"You Lose !");  
-           gamePanel.dispose();
+
+    public void exit(Zombie zombie) {
+        if (zombie.getX() <= 0) {
+            this.gameOver = new GameOver();
+            gamePanel.getGame().getGameTheard().interrupt();
+            gamePanel.getGame().setVisible(false);
         }
     }
+
     public ArrayList<Zombie> getZombies() {
         return zombies;
     }

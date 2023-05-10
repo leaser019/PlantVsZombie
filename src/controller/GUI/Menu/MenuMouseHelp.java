@@ -1,9 +1,8 @@
-package controller.MainMenu.Menu;
+package controller.GUI.Menu;
 
-import java.awt.*;
 import java.awt.event.*;
 
-import view.MainMenu.MenuView;
+import view.GUI.MenuView;
 
 public class MenuMouseHelp implements MouseListener {
     private MenuView menuView;
