@@ -185,7 +185,7 @@ public class Game extends JFrame implements Runnable {
 
     public void winGame() {
         this.gameWin = new GameWin();
-        this.dispose();
+        gameWin.setVisible(true);
     }
 
 

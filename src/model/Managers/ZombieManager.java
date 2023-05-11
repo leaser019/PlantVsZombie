@@ -18,6 +18,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.Random;
 
 import model.Object.Zombie;
 import model.Zombie.bossZombie;
@@ -28,8 +29,6 @@ import view.GUI.GameWin;
 import view.Game.GamePanel;
 
 public class ZombieManager {
-    private static int numZombie = 0;
-    private static int zombieKilled = 0;
     private GameWin gameOver;
     private GamePanel gamePanel;
     private Image[] zombieImg;
@@ -42,10 +41,10 @@ public class ZombieManager {
         this.addZombie(1000, 100, normalZombie);
         this.addZombie(1000, 2 * 100, coneZombie);
         this.addZombie(1000, 3 * 100, coneZombie);
-        this.addZombie(1000, 3 * 100, normalZombie);
-        this.addZombie(2000, 4 * 100, finalZombie);
-        // this.addZombie(10, 222, normalZombie);
-
+        this.addZombie(1000, 3 * 110, normalZombie);
+        this.addZombie(1100, 4 * 105, finalZombie);
+        this.addZombie(1200, 5*100, normalZombie);
+        this.addZombie(1200,3*110,coneZombie);
         this.loadZombieImg();
     }
 
@@ -66,11 +65,6 @@ public class ZombieManager {
                 this.drawZombie(zombie, g);
             }
         }
-    }
-
-    private void drawHealthBar(Zombie z, Graphics g) {
-        g.setColor(Color.RED);
-        g.fillRect((int) z.getX(), (int) z.getY() - 10, (int) (50 * z.getHealthBar()), 5);
     }
 
     private void drawZombie(Zombie zombie, Graphics g) {
@@ -94,27 +88,28 @@ public class ZombieManager {
                 zombies.add(new finalZombie(x, y, 0));
                 break;
         }
-        numZombie++;
     }
 
     public void update() {
-
+        int zombieKilled = 0;
+        int numZombie = this.zombies.size();
         for (Zombie zombie : zombies) {
             if (zombie.getAlive()) {
                 zombie.move(getSpeed(zombie.getZombieType()), 0f);
                 this.exit(zombie);
-            }else{
+            }
+            if (!zombie.getAlive()) {
                 zombieKilled++;
             }
-            if(zombieKilled==numZombie){
+            if (zombieKilled == numZombie) {
                 this.winGame();
             }
-
         }
     }
 
     private void winGame() {
-        this.gamePanel.getGame().winGame();
+        GameWin gw = new GameWin();
+        gamePanel.getGame().dispose();
     }
 
     public void exit(Zombie zombie) {
@@ -124,6 +119,13 @@ public class ZombieManager {
             gamePanel.getGame().getGameTheard().interrupt();
         }
     }
+
+    public int getRandomNumber(int a,int b){
+        Random rand = new Random();
+        int ranNum = rand.nextInt(b)+a;
+        return ranNum;
+    }
+
 
     public ArrayList<Zombie> getZombies() {
         return zombies;
