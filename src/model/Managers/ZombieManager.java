@@ -25,11 +25,12 @@ import model.Zombie.bossZombie;
 import model.Zombie.coneZombie;
 import model.Zombie.finalZombie;
 import model.Zombie.normalZombie;
+import view.GUI.GameOver;
 import view.GUI.GameWin;
 import view.Game.GamePanel;
 
 public class ZombieManager {
-    private GameWin gameOver;
+    private GameOver gameOver;
     private GamePanel gamePanel;
     private Image[] zombieImg;
     private ArrayList<Zombie> zombies = new ArrayList<>();
@@ -135,7 +136,7 @@ public class ZombieManager {
 
     public void exit(Zombie zombie) {
         if (zombie.getX() <= 0) {
-            this.gameOver = new GameWin();
+            this.gameOver = new GameOver();
             gamePanel.getGame().setVisible(false);
             gamePanel.getGame().getGameTheard().interrupt();
         }
