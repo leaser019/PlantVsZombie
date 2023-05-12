@@ -38,14 +38,35 @@ public class ZombieManager {
         this.gamePanel = gamePanel;
         zombieImg = new Image[4];
         // size 9*110,5*150
-        this.addZombie(1000, 100, normalZombie);
-        this.addZombie(1000, 2 * 100, coneZombie);
-        this.addZombie(1000, 3 * 100, coneZombie);
-        this.addZombie(1000, 3 * 110, normalZombie);
-        this.addZombie(1100, 4 * 105, finalZombie);
-        this.addZombie(1200, 5*100, normalZombie);
-        this.addZombie(1200,3*110,coneZombie);
+        this.initZombie();
         this.loadZombieImg();
+    }
+
+    public void initZombie() {
+        int appearX = 1000;
+        this.addZombie(appearX + getRandomNumber(1, 100), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(1, 100), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(1, 100), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(100, 300), getRandomNumber(1, 5) * 110,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(100, 300), getRandomNumber(1, 5) * 105,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(100, 300), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(600, 700), getRandomNumber(1, 5) * 100,
+                finalZombie);
+
     }
 
     public void loadZombieImg() {
@@ -120,12 +141,11 @@ public class ZombieManager {
         }
     }
 
-    public int getRandomNumber(int a,int b){
+    public int getRandomNumber(int a, int b) {
         Random rand = new Random();
-        int ranNum = rand.nextInt(b)+a;
+        int ranNum = rand.nextInt(b) + a;
         return ranNum;
     }
-
 
     public ArrayList<Zombie> getZombies() {
         return zombies;
