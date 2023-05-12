@@ -13,7 +13,6 @@ package model.Managers;
 
 import static model.Helper.Constant.Zombies.*;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;

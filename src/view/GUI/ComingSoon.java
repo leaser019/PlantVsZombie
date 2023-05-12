@@ -11,8 +11,6 @@ where players use plants to defend their home from zombies.
 
 package view.GUI;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
