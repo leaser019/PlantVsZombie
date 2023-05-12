@@ -44,6 +44,6 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 * Start playing with when you click adventure. 
 * If you lose, click on GameWinner or GameOver pannel the game will restart.
 
-## Feature
+
 
 
