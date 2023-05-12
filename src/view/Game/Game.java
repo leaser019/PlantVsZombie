@@ -12,6 +12,7 @@ where players use plants to defend their home from zombies.
 package view.Game;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 import controller.InputForGame.MyKeyBoardListener;
 import controller.InputForGame.MyMouseListener;
@@ -34,6 +35,7 @@ public class Game extends JFrame implements Runnable {
 
     private GamePanel gamePanel;
     private GameWin gameWin;
+    private JLabel jLabel;
     private MyMouseListener myMouseListener;
     private MyKeyBoardListener myKeyBoardListener;
 
@@ -48,6 +50,8 @@ public class Game extends JFrame implements Runnable {
         this.setSize(widthSize, heightSize);// 995=111*9,750=150*5
         this.setLocationRelativeTo(null);
         this.setLayout(new BorderLayout());
+        jLabel = new JLabel("FPS = 0| UPS = 0| Time On Game = 0");
+        this.add(jLabel, BorderLayout.NORTH);
         this.add(gamePanel, BorderLayout.CENTER);
         setResizable(false);
         setFont(new Font("Times New Roman", Font.PLAIN, 14));
@@ -89,7 +93,7 @@ public class Game extends JFrame implements Runnable {
             // Render
             if (now - lastTimeFPS >= timePerFrame) {
                 frame++;
-                lastTimeFPS = System.nanoTime();           
+                lastTimeFPS = System.nanoTime();
                 repaint();
             }
             // Update
@@ -100,8 +104,9 @@ public class Game extends JFrame implements Runnable {
             }
             // FPS Counter & UPS Counter
             if (System.currentTimeMillis() - lastTimeCheck >= 1000) {
-                System.out.println("FPS: " + frame + "| UPS: " + updateGame);
-                System.out.println("Time On Game: "+(int)(countTime-startTime)/1000+" s");
+                String rs = "FPS: " + frame + "| UPS: " + updateGame + "| Time On Game: "
+                        + (int) (countTime - startTime) / 1000 + " s";
+                jLabel.setText(rs);
                 updateGame = 0;
                 frame = 0;
                 lastTimeCheck = System.currentTimeMillis();
@@ -187,6 +192,4 @@ public class Game extends JFrame implements Runnable {
         this.gameWin = new GameWin();
         gameWin.setVisible(true);
     }
-
-
 }

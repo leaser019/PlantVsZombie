@@ -12,6 +12,7 @@ where players use plants to defend their home from zombies.
 package view.Game;
 
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controller.InputForGame.MyKeyBoardListener;
@@ -24,12 +25,14 @@ import model.Object.Plant;
 import model.Object.Zombie;
 import view.UI.CardBar;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
 public class GamePanel extends JPanel implements IMouse {
     private Game game;
+    private JLabel jLabel;
     private ZombieManager zombieManager;
     private PlantManager plantManager;
     private ProjectileManager projectileManager;
