@@ -11,6 +11,8 @@ where players use plants to defend their home from zombies.
 
 package view.Game;
 
+import static model.Helper.Constant.GameWindow.*;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -23,10 +25,10 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 
 public class Game extends JFrame implements Runnable {
-    private double setFPS = 80;
-    private double setUPS = 60;
-    private int widthSize = 999;
-    private int heightSize = 750;
+    private double setFPS = fps;
+    private double setUPS = ups;
+    private int widthSize = widthGameWindow;
+    private int heightSize = heightGameWindow;
     private Thread gameTheard;
 
     public static void main(String[] args) {
@@ -80,10 +82,10 @@ public class Game extends JFrame implements Runnable {
         double lastTimeFPS = System.nanoTime();
         double lastTimeUPS = System.nanoTime();
         double startTime = System.currentTimeMillis();
-        double countTime = 0;
+        double countTime = reset;
 
-        int updateGame = 0;
-        int frame = 0;
+        int updateGame = reset;
+        int frame = reset;
         double now;
 
         while (true) {
@@ -107,8 +109,8 @@ public class Game extends JFrame implements Runnable {
                 String rs = "FPS: " + frame + "| UPS: " + updateGame + "| Time On Game: "
                         + (int) (countTime - startTime) / 1000 + " s";
                 jLabel.setText(rs);
-                updateGame = 0;
-                frame = 0;
+                updateGame = reset;
+                frame = reset;
                 lastTimeCheck = System.currentTimeMillis();
             }
         }

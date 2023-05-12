@@ -29,25 +29,6 @@ import java.awt.Toolkit;
 public class GameOver extends JFrame {
     private JPanel contentPane;
 
-    /**
-     * Launch the application.
-     */
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    ComingSoon frame = new ComingSoon();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-    /**
-     * Create the frame.
-     */
     public GameOver() {
         GameOverMouseListener MouseListener = new GameOverMouseListener(this);
         setResizable(false);

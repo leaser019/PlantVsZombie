@@ -31,7 +31,10 @@ public abstract class Zombie {
         ID = iD;
         this.zombieType = zombieType;
         alive = true;
-        bounds = new Rectangle((int) x, (int) y, 62, 100);
+        int widthBounds = 62;
+        int heightBounds = 100;
+
+        bounds = new Rectangle((int) x, (int) y, widthBounds, heightBounds);
         setStartHealth();
         setStartSpeed();
     }

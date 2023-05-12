@@ -58,8 +58,6 @@ public class CardBar implements IMouse {
 
     private void drawDisplayPlant(Graphics g) {
         if (displayPlant != null) {
-            // g.drawImage(gamePanel.getPlantManager().getPlantImg()[displayPlant.getPlantType()],
-            // 0, 0,50,50, null);
             drawDisplayPlantRange(g);
         }
     }

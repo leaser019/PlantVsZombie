@@ -25,8 +25,6 @@ import model.Object.Plant;
 import model.Object.Zombie;
 import view.UI.CardBar;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 
@@ -67,15 +65,6 @@ public class GamePanel extends JPanel implements IMouse {
         plantManager.draw(g);
         projectileManager.draw(g);
         drawSelectedPlant(g);
-    }
-
-    private void drawHightLight(Graphics g) {
-        int withHightLight = 111;
-        int heightHightLight = 120;
-        if (selectedPlant != null) {
-            g.setColor(Color.WHITE);
-            g.drawRect(mouseX, mouseY, withHightLight, heightHightLight);
-        }
     }
 
     private void drawSelectedPlant(Graphics g) {

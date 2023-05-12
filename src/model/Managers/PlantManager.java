@@ -150,8 +150,9 @@ public class PlantManager {
     }
 
     public boolean checkY(Plant plant, Zombie zombie) {
-        return (plant.getY() - 50 <= zombie.getY())
-                && (zombie.getY() <= (plant.getY() + 50));
+        int limit = 50;
+        return (plant.getY() - limit <= zombie.getY())
+                && (zombie.getY() <= (plant.getY() + limit));
     }
 
 }

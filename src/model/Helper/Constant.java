@@ -12,6 +12,14 @@ where players use plants to defend their home from zombies.
 package model.Helper;
 
 public class Constant {
+    public static class GameWindow {
+        public static final int heightGameWindow = 750;
+        public static final int widthGameWindow = 999;
+        public static final int fps = 120;
+        public static final int ups = 100;
+        public static final int reset = 0;
+    }
+
     public static class Projectile {
         public static final int greenBall = 0;
         public static final int freezeBall = 1;
