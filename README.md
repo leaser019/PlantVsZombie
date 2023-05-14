@@ -39,7 +39,8 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 * Java runtime installed
 ### How to play the game:
 
-* Just download the PlantsVsZombies.jar file
+* Just download the PlantsVsZombies folder
+* Oper it and click on PlantsVsZombies.jar 
 * Run it 
 * Start playing with when you click adventure. 
 * If you lose, click on GameWinner or GameOver pannel the game will restart.
