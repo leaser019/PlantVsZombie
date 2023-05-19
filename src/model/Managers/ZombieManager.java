@@ -53,18 +53,35 @@ public class ZombieManager {
         this.addZombie(appearX + getRandomNumber(100, 300), getRandomNumber(1, 5) * 110,
                 getRandomNumber(normalZombie, coneZombie));
         this.addZombie(appearX + getRandomNumber(100, 300), getRandomNumber(1, 5) * 105,
-                getRandomNumber(normalZombie, coneZombie));
+                coneZombie);
         this.addZombie(appearX + getRandomNumber(100, 300), getRandomNumber(1, 5) * 100,
-                getRandomNumber(normalZombie, coneZombie));
+                coneZombie);
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
                 getRandomNumber(normalZombie, coneZombie));
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
                 getRandomNumber(normalZombie, coneZombie));
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                coneZombie);
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
                 getRandomNumber(normalZombie, coneZombie));
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
                 getRandomNumber(normalZombie, coneZombie));
-        this.addZombie(appearX + getRandomNumber(600, 700), getRandomNumber(1, 5) * 100,
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                coneZombie);
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                coneZombie);
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                coneZombie);
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(1, 5) * 100,
+                getRandomNumber(normalZombie, coneZombie));
+
+        this.addZombie(appearX + getRandomNumber(900, 1000), getRandomNumber(1, 5) * 100,
                 finalZombie);
 
     }
