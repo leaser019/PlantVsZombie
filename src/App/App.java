@@ -20,8 +20,8 @@ public class App {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    MenuView frame = new MenuView();
-                    frame.setVisible(true);
+                    MenuView runGame = new MenuView();
+                    runGame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
