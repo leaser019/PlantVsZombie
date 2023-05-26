@@ -5,8 +5,7 @@ Members:
     Nguyễn Hoàng Gia Ân - ITCSIU21161
     Nguyễn Trọng Nguyên - ITITIU21263
 Choice of game: Plants and Zombies.
- Purpose: "Plants vs. Zombies" is a popular tower defense game 
-where players use plants to defend their home from zombies. 
+ Purpose: "Plants vs. Zombies" is a popular tower defense game where players use plants to defend their home from zombies. 
 */
 
 package controller.GUI.Menu;
