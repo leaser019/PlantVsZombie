@@ -47,7 +47,7 @@ public class ProjectileManager {
 
     public void loadProjectileImg() {
         projectileImg[0] = Toolkit.getDefaultToolkit().getImage("lib\\image\\greenBall.png");
-        projectileImg[1] = Toolkit.getDefaultToolkit().getImage("lib\\image\\freezeBall.png");
+        projectileImg[1] = Toolkit.getDefaultToolkit().getImage("lib\\image\\freezeBall.gif");
     }
 
     public void draw(Graphics g) {

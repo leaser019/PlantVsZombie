@@ -81,7 +81,13 @@ public class ZombieManager {
                 coneZombie);
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
                 getRandomNumber(normalZombie, coneZombie));
-        this.addZombie(appearX + getRandomNumber(900, 1000), getRandomNumber(2, 4) * 100,
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
+                coneZombie);
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
+                coneZombie);
+        this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
+                normalZombie);
+        this.addZombie(appearX + getRandomNumber(500, 1000), getRandomNumber(2, 4) * 100,
                 finalZombie);
 
     }

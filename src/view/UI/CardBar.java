@@ -26,8 +26,8 @@ public class CardBar implements IMouse {
     private GamePanel gamePanel;
     private Plant selectedPlant;
     private Plant displayPlant;
-    int w = 65;
-    int h = 70;
+    int w = 93;
+    int h = 58;
 
     public CardBar(int x, int y, int width, int height, GamePanel gamePanel) {
         this.x = x;
