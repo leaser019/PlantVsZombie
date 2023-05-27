@@ -67,7 +67,7 @@ public class GamePanel extends JPanel implements IMouse {
         plantManager.draw(g);
         projectileManager.draw(g);
         drawSelectedPlant(g);
-        // hugeZombieTime(g);
+        hugeZombieTime(g);
 
     }
 
@@ -101,8 +101,8 @@ public class GamePanel extends JPanel implements IMouse {
         int checkTime = 30;
         if (checkTime>=30) {
             g.drawImage(Toolkit.getDefaultToolkit().getImage(
-                    "lib\\image\\hugeZombie.png"), (int) widthGameWindow / 2, (int) heightGameWindow / 2, null);
-    
+                    "lib\\image\\hugeZombie.png"),10 ,10 , null);
+        }
     }
 
     public PlantManager getPlantManager() {
