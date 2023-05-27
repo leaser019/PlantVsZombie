@@ -38,7 +38,6 @@ public class Game extends JFrame implements Runnable {
     private GamePanel gamePanel;
     private GameWin gameWin;
     private JLabel jLabel;
-    private boolean checkHugeZombieTime;
     private MyMouseListener myMouseListener;
     private MyKeyBoardListener myKeyBoardListener;
 
@@ -86,7 +85,6 @@ public class Game extends JFrame implements Runnable {
         double countTime = reset;
         int updateGame = reset;
         int frame = reset;
-        checkHugeZombieTime = false;
         double now;
 
         while (true) {

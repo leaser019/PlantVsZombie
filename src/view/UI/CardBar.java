@@ -43,8 +43,8 @@ public class CardBar implements IMouse {
     }
 
     public void initButtons() {
-        int xButtonPause = widthGameWindow - 10;
-        int yButtonPause = heightGameWindow - 10;
+        int xButtonPause = 880;
+        int yButtonPause = y-20;
         int widthButtonPause = 100;
         int heightButtonPause = 100;
         buttonsPause = new MyButton("", xButtonPause, yButtonPause, widthButtonPause, heightButtonPause);
@@ -85,7 +85,7 @@ public class CardBar implements IMouse {
             }
         }
         g.drawImage(Toolkit.getDefaultToolkit().getImage(
-            "lib\\image\\zombie1.png"), buttonsPause.x, buttonsPause.y, null);
+            "lib\\image\\pauseButton.png"), buttonsPause.x, buttonsPause.y, null);
     }
 
     public int getX() {
@@ -153,6 +153,13 @@ public class CardBar implements IMouse {
                 return;
             }
         }
+         if(buttonsPause.getBound().contains(x,y)){
+            this.pauseGame();
+        }
+    }
+
+    private void pauseGame() {
+        this.gamePanel.setPauseGame(!this.gamePanel.isGamePause());
     }
 
     @Override

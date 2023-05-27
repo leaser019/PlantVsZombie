@@ -40,6 +40,7 @@ public class GamePanel extends JPanel implements IMouse {
     private MyMouseListener mouseListener;
     private CardBar cardBar;
     private Plant selectedPlant;
+    private boolean pauseGame;
     private int mouseX = 0;
     private int mouseY = 0;
     private static int checkTime = 0;
@@ -49,6 +50,7 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void init() {
+        this.pauseGame = false;
         cardBar = new CardBar(10, 10, 450, 80, this);
         zombieManager = new ZombieManager(this);
         plantManager = new PlantManager(this);
@@ -84,9 +86,11 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void updateGame() {
-        zombieManager.update();
-        plantManager.update();
-        projectileManager.update();
+        if (!pauseGame) {
+            zombieManager.update();
+            plantManager.update();
+            projectileManager.update();
+        }
     }
 
     public void initInput() {
@@ -98,20 +102,28 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void hugeZombieTime(Graphics g) {
-        int xHugeZombie = 120 ;
+        int xHugeZombie = 120;
         int yHugeZombie = 80;
-        if (checkTime>=20&& checkTime<=25) {
+        if (checkTime >= 20 && checkTime <= 25) {
             g.drawImage(Toolkit.getDefaultToolkit().getImage(
-                    "lib\\image\\hugeZombie.png"),xHugeZombie ,yHugeZombie, null);
+                    "lib\\image\\hugeZombie.png"), xHugeZombie, yHugeZombie, null);
         }
     }
-    
-    public void setCheckTime(int num){
-        this.checkTime+=num;
+
+    public void setPauseGame(boolean pause) {
+        this.pauseGame = pause;
+    }
+
+    public void setCheckTime(int num) {
+        this.checkTime += num;
     }
 
     public PlantManager getPlantManager() {
         return this.plantManager;
+    }
+
+    public boolean isGamePause() {
+        return pauseGame;
     }
 
     public void setSelectedPlant(Plant selectedPlant) {
