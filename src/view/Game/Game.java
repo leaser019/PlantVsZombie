@@ -13,6 +13,9 @@ package view.Game;
 
 import static model.Helper.Constant.GameWindow.*;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -21,6 +24,7 @@ import controller.InputForGame.MyMouseListener;
 import view.GUI.GameWin;
 
 import java.awt.Toolkit;
+import java.io.File;
 import java.awt.BorderLayout;
 import java.awt.Font;
 
@@ -45,6 +49,7 @@ public class Game extends JFrame implements Runnable {
         this.init();
         this.start();
         this.initInput();
+        this.musicBackground();
     }
 
     public void init() {
@@ -68,6 +73,21 @@ public class Game extends JFrame implements Runnable {
         gameTheard = new Thread(this) {
         };
         gameTheard.start();
+    }
+
+    public void musicBackground(){
+        String filePath="lib\\sound\\Grasswalk.wav";
+        try {
+            File file = new File(filePath);
+            if(file.exists()){
+                AudioInputStream ais = AudioSystem.getAudioInputStream(file);
+                Clip clip = AudioSystem.getClip();
+                clip.open(ais);
+                clip.start();
+            }
+        } catch (Exception e) {
+        }
+
     }
 
     public void updateGame() {
