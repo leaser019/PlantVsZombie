@@ -43,11 +43,11 @@ public class Constant {
         public static float getSpeed(int zombieType) {
             switch (zombieType) {
                 case normalZombie:
-                    return -0.2f;
+                    return -0.3f;
                 case coneZombie:
-                    return -0.18f;
+                    return -0.2f;
                 case finalZombie:
-                    return -0.22f;
+                    return -0.3f;
                 case bossZombie:
                     return -0.14f;
             }
@@ -71,11 +71,11 @@ public class Constant {
         public static int getStartHealth(int zombieType) {
             switch (zombieType) {
                 case normalZombie:
-                    return 100;
-                case coneZombie:
                     return 150;
+                case coneZombie:
+                    return 250;
                 case finalZombie:
-                    return 160;
+                    return 300;
                 case bossZombie:
                     return 300;
             }
@@ -143,7 +143,7 @@ public class Constant {
                 case peaShooter:
                     return 1.2f;
                 case freezePea:
-                    return 1.9f;
+                    return 10f;
             }
             return 0;
         }

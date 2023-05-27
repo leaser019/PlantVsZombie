@@ -13,6 +13,9 @@ package view.UI;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Toolkit;
+
+import static model.Helper.Constant.GameWindow.*;
 
 import model.Helper.IMouse;
 import model.Managers.PlantManager;
@@ -22,6 +25,7 @@ import view.Game.GamePanel;
 public class CardBar implements IMouse {
     private int x, y, width, height;
     private MyButton[] plantButtons;
+    private MyButton buttonsPause;
     private PlantManager plantManager;
     private GamePanel gamePanel;
     private Plant selectedPlant;
@@ -39,6 +43,11 @@ public class CardBar implements IMouse {
     }
 
     public void initButtons() {
+        int xButtonPause = widthGameWindow - 10;
+        int yButtonPause = heightGameWindow - 10;
+        int widthButtonPause = 100;
+        int heightButtonPause = 100;
+        buttonsPause = new MyButton("", xButtonPause, yButtonPause, widthButtonPause, heightButtonPause);
         plantButtons = new MyButton[3];
         int x = 10;
         int y = 10;
@@ -75,7 +84,8 @@ public class CardBar implements IMouse {
                 g.drawRect(plantButtons[i].x, plantButtons[i].y, w, h);
             }
         }
-
+        g.drawImage(Toolkit.getDefaultToolkit().getImage(
+            "lib\\image\\zombie1.png"), buttonsPause.x, buttonsPause.y, null);
     }
 
     public int getX() {

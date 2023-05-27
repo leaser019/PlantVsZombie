@@ -14,7 +14,7 @@ package view.Game;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import static model.Helper.Constant.GameWindow.*;
 import controller.InputForGame.MyKeyBoardListener;
 import controller.InputForGame.MyMouseListener;
 import model.Helper.IMouse;
@@ -27,6 +27,7 @@ import view.UI.CardBar;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 
 public class GamePanel extends JPanel implements IMouse {
     private Game game;
@@ -41,6 +42,7 @@ public class GamePanel extends JPanel implements IMouse {
     private Plant selectedPlant;
     private int mouseX = 0;
     private int mouseY = 0;
+    private int startTime = (int) System.currentTimeMillis();
 
     public GamePanel() {
         this.init();
@@ -65,6 +67,8 @@ public class GamePanel extends JPanel implements IMouse {
         plantManager.draw(g);
         projectileManager.draw(g);
         drawSelectedPlant(g);
+        // hugeZombieTime(g);
+
     }
 
     private void drawSelectedPlant(Graphics g) {
@@ -91,6 +95,14 @@ public class GamePanel extends JPanel implements IMouse {
         this.addKeyListener(keyBoardListener);
         this.addMouseListener(mouseListener);
         this.addMouseMotionListener(mouseListener);
+    }
+
+    public void hugeZombieTime(Graphics g) {
+        int checkTime = 30;
+        if (checkTime>=30) {
+            g.drawImage(Toolkit.getDefaultToolkit().getImage(
+                    "lib\\image\\hugeZombie.png"), (int) widthGameWindow / 2, (int) heightGameWindow / 2, null);
+    
     }
 
     public PlantManager getPlantManager() {
@@ -185,5 +197,4 @@ public class GamePanel extends JPanel implements IMouse {
         return game;
     }
 
-    
 }
