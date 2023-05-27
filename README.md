@@ -20,7 +20,7 @@ The PVSZ software is a third-person shooting game developed by PopCap Games. In 
 
 ## How It Look
 
-![image](https://github.com/leaser362/GameProject/assets/91241850/e9603e6d-5a21-4785-bd48-b1c5480d7289)
+<!-- ![image](https://github.com/leaser362/GameProject/assets/91241850/e9603e6d-5a21-4785-bd48-b1c5480d7289) -->
 
 
 ## Folder Structure
