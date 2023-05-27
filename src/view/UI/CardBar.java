@@ -40,8 +40,8 @@ public class CardBar implements IMouse {
 
     public void initButtons() {
         plantButtons = new MyButton[3];
-        int x = 110;
-        int y = 13;
+        int x = 10;
+        int y = 10;
         int addOn = 10;
         int step = ((int) 1.9f * w) + addOn;
 

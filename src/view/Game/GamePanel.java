@@ -47,7 +47,7 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void init() {
-        cardBar = new CardBar(116, 15, 450, 80, this);
+        cardBar = new CardBar(10, 10, 450, 80, this);
         zombieManager = new ZombieManager(this);
         plantManager = new PlantManager(this);
         projectileManager = new ProjectileManager(this);

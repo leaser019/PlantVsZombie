@@ -14,8 +14,8 @@ public class Constant {
     public static class GameWindow {
         public static final int heightGameWindow = 750;
         public static final int widthGameWindow = 999;
-        public static final int fps = 120;
-        public static final int ups = 100;
+        public static final int fps = 60;
+        public static final int ups = 60;
         public static final int reset = 0;
     }
 
