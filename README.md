@@ -18,19 +18,19 @@ Members:
 
 The PVSZ software is a third-person shooting game developed by PopCap Games. In the game, players will play as the main character and use various types of plants that can shoot bullets to prevent the invasion of zombies into their garden.
 
-## How It Look
+<!-- ## How It Look -->
 
 <!-- ![image](https://github.com/leaser362/GameProject/assets/91241850/e9603e6d-5a21-4785-bd48-b1c5480d7289) -->
 
 
-## Folder Structure
+<!-- ## Folder Structure
 
 The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources following MVC model.
 - `lib`: the folder to have image we use.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Meanwhile, the compiled output files will be generated in the `bin` folder by default. -->
 
 ## How To Run
 
