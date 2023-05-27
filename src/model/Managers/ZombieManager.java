@@ -89,7 +89,7 @@ public class ZombieManager {
         zombieImg[0] = Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\zombie1.gif");
         zombieImg[1] = Toolkit.getDefaultToolkit().getImage(
-                "lib\\image\\zombie2.png");
+                "lib\\image\\zombie2.gif");
         zombieImg[2] = Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\finalZombie.png");
         zombieImg[3] = Toolkit.getDefaultToolkit().getImage(
