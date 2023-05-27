@@ -42,7 +42,7 @@ public class GamePanel extends JPanel implements IMouse {
     private Plant selectedPlant;
     private int mouseX = 0;
     private int mouseY = 0;
-    private int startTime = (int) System.currentTimeMillis();
+    private static int checkTime = 0;
 
     public GamePanel() {
         this.init();
@@ -98,11 +98,16 @@ public class GamePanel extends JPanel implements IMouse {
     }
 
     public void hugeZombieTime(Graphics g) {
-        int checkTime = 30;
-        if (checkTime>=30) {
+        int xHugeZombie = 120 ;
+        int yHugeZombie = 80;
+        if (checkTime>=20&& checkTime<=25) {
             g.drawImage(Toolkit.getDefaultToolkit().getImage(
-                    "lib\\image\\hugeZombie.png"),10 ,10 , null);
+                    "lib\\image\\hugeZombie.png"),xHugeZombie ,yHugeZombie, null);
         }
+    }
+    
+    public void setCheckTime(int num){
+        this.checkTime+=num;
     }
 
     public PlantManager getPlantManager() {

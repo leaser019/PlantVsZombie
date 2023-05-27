@@ -112,6 +112,7 @@ public class Game extends JFrame implements Runnable {
                 jLabel.setText(rs);
                 updateGame = reset;
                 frame = reset;
+                gamePanel.setCheckTime(1);
                 lastTimeCheck = System.currentTimeMillis();
             }
         }
