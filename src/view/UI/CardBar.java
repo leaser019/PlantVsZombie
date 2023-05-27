@@ -62,7 +62,15 @@ public class CardBar implements IMouse {
     public void draw(Graphics g) {
         drawButton(g);
         drawDisplayPlant(g);
+        drawPauseGame(g);
 
+    }
+
+    private void drawPauseGame(Graphics g) {
+        if(this.gamePanel.isGamePause()){
+            g.drawImage(Toolkit.getDefaultToolkit().getImage(
+                "lib\\image\\pauseNotification.png"), 90, 80, null);
+        }
     }
 
     private void drawDisplayPlant(Graphics g) {
