@@ -67,6 +67,8 @@ public class ZombieManager {
                 getRandomNumber(normalZombie, coneZombie));
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
                 coneZombie);
+        this.addZombie(appearX + getRandomNumber(300, 1000), getRandomNumber(2, 4) * 100,
+                finalZombie);
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
                 getRandomNumber(normalZombie, coneZombie));
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
@@ -79,7 +81,6 @@ public class ZombieManager {
                 coneZombie);
         this.addZombie(appearX + getRandomNumber(300, 500), getRandomNumber(2, 4) * 100,
                 getRandomNumber(normalZombie, coneZombie));
-
         this.addZombie(appearX + getRandomNumber(900, 1000), getRandomNumber(2, 4) * 100,
                 finalZombie);
 
@@ -91,7 +92,7 @@ public class ZombieManager {
         zombieImg[1] = Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\zombie2.gif");
         zombieImg[2] = Toolkit.getDefaultToolkit().getImage(
-                "lib\\image\\finalZombie.png");
+                "lib\\image\\finalZombie.gif");
         zombieImg[3] = Toolkit.getDefaultToolkit().getImage(
                 "lib\\image\\bossZombie.png");
     }
