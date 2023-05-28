@@ -141,9 +141,9 @@ public class Constant {
                 case sunFlower:
                     return 0f;
                 case peaShooter:
-                    return 1.2f;
-                case freezePea:
                     return 10f;
+                case freezePea:
+                    return 100f;
             }
             return 0;
         }
