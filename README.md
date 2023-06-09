@@ -1,7 +1,5 @@
-╔══════════════════════════════════════════════════╗
-║                Plants Vs Zombies                  ║
-║            OOP Course's Project                   ║
-╚══════════════════════════════════════════════════╝
+# Plants Vs Zombies                 
+
 
 ![Plants Vs Zombies](https://github.com/leaser362/GameProject/assets/91241850/fa770c0a-494a-4ac6-b001-1e64747dc987)
 
